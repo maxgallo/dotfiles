@@ -5,15 +5,35 @@ alias clear='printf "\033c"'
 alias edbash='sublime ~.bash_profile'
 
 
-#HTV alias
+#HTV start
 alias hypertv='/usr/local/hypertv.sh'
 alias edprop='sublime /usr/local/liferay-portal-5.2.3/portal-ext.properties'
+function catlog(){
+	tail -f  /usr/local/liferay-portal-5.2.3/tomcat/logs/catalina.out | awk '
+   		/are available for use/ {print "\033[35m" $0 "\033[39m" ; next}
+   		/Server startup in/ {print "\033[33m" $0 "\033[39m" ; next}
+   		/ERROR/ {print "\033[31m" $0 "\033[39m" ; next}
+   		1 {print}
+	'
+}
+export -f catlog
+function datlog(){
+	local currentDate=`date +"%Y_%m_%d"`
+	tail -f /usr/local/jetty-8.1.12/logs/$currentDate.stderrout.log | awk '
+   		/started in/ {print "\033[35m" $0 "\033[39m" ; next}
+   		/destroyed/ {print "\033[35m" $0 "\033[39m" ; next}
+   		/ERROR/ {print "\033[31m" $0 "\033[39m" ; next}
+   		1 {print}
+	'
+}
+export -f datlog
+#HTV end
 
 
 
 export LC_ALL="en_US.UTF-8"
 export CLICOLOR=1
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Refresh last chrome tab
@@ -54,19 +74,22 @@ function execute_me_on_file_changes {
    
     echo -e "file changed"
 
-
     #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/bootstrap/js/ui-bootstrap-tpls-0.12.1.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/bootstrap/js/ui-bootstrap-tpls-0.12.1.js"
     #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/gaming.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/gaming.js"
+  
     
-
-    
-    # cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/css/hypertv/hypertv.css" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/css/hypertv/hypertv.css"
-    # cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/hypertv.utils.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/hypertv.utils.js"
-    # cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/login.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/login.js"
-    # cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/gaming.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/gaming.js"
+    #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/css/hypertv/hypertv.css" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/css/hypertv/hypertv.css"
+    cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/htv-loginutils.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/htv-loginutils.js"
+    cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/htv-utils.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/htv-utils.js"
+    cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/login.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/login.js"
+    #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/gaming.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/gaming.js"
     # cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/hypertv/notification.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/hypertv/notification.js"
+    # 
+
+    #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/videojs/video.dev.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/videojs/video.dev.js"
+    #cp "/Users/macs/HyperTVx/EclipseWorkspace/htbackend/ext-web/docroot/html/js/videojs/videojs-contrib-hls/videojs.hls.hypertvx.js" "/usr/local/liferay-portal-5.2.3/tomcat/webapps/ROOT/html/js/videojs/videojs-contrib-hls/videojs.hls.hypertvx.js"
     
-    # curl -s "http://macsmbpr.local:8080/htx/rest/restricted/clearcaches" > /dev/null
+    curl -s "http://macs.local:8080/htx/rest/restricted/clearcaches" > /dev/null
 
     refresh_current_chrome_tab
     
