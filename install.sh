@@ -1,7 +1,12 @@
 #!/bin/bash
 
-function removeOldFiles() {
+DOTFILES_FOLDER=~/src/github/maxgallo/dotfiles
 
+echo $DOTFILES_FOLDER
+
+function removeOldFiles() {
+	# do nothing
+	:
 }
 
 function copyNewFiles() {
@@ -10,9 +15,10 @@ function copyNewFiles() {
 }
 
 function doId() {
-	removeOldFiles
-	copyNewFiles
-	source ~/.bash_profile
+	:
+	# removeOldFiles
+ 	# copyNewFiles
+	# source ~/.bash_profile
 }
 
 
@@ -44,10 +50,10 @@ if [[ $(uname) == 'Darwin' ]]; then
 		./macos.sh
 	fi
 
-	read -p "Would you like to set up fish shell ? (y/n) " -n 1 -r
+	read -p "Would you like to set up Fish Shell ? (y/n) " -n 1 -r
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		./fish.sh
+		. ./fish.sh    # with the leading dot, fish.sh is executed in the same shell, so they can share variables
 	fi
 fi
 

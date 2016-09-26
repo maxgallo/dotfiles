@@ -6,8 +6,23 @@ if [[ ! "$(type -P brew)" ]]; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+
+# Installine powershell
+echo "Installing Powerline Shell"
+cd ~
+rm -rf powerline-shell
+git clone git@github.com:maxgallo/powerline-shell.git
+cd powerline-shell/ 
+#cp config.py.dist config.py
+cp $DOTFILES_FOLDER/powerline-shell-config.py config.py
+./install.py
+cd $DOTFILES_FOLDER
+
 # Install fish
-brew install fish
+if [[ ! "$(type -P fish)" ]]; then
+	echo "Installing Fish"
+	brew install fish
+fi
 
 # Install oh my fish
 if [[ ! "$(type -P omf)" ]]; then
@@ -17,13 +32,14 @@ if [[ ! "$(type -P omf)" ]]; then
 fi
 
 # Copying fish configuration
+echo "Copy Fish configuration file"
 rm -rf ~/.config/fish/config.fish
 cp ./config.fish ~/.config/fish/config.fish
 
-# Installine powershell
-cd ~
-git clone git@github.com:maxgallo/powerline-shell.git
-cd powerline-shell/ 
-cp config.py.dist config.py
-./install.py
- 
+
+
+
+
+
+
+

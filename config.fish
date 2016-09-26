@@ -46,7 +46,7 @@ set fish_color_redirection yellow
 #powerline-setup
 
 function fish_prompt
-    /usr/local/powerline-shell/powerline-shell.py $status --shell bare ^/dev/null --colorize-hostname
+    ~/powerline-shell/powerline-shell.py $status --shell bare ^/dev/null --colorize-hostname
 end
 
 # NVM
