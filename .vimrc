@@ -74,6 +74,7 @@ syntax on
     let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Colours
+    set background=dark
     colorscheme OceanicNext
 
 " vim-jsx
