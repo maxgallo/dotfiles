@@ -32,6 +32,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 
+# Git, use vim as editor
+git config --global core.editor `which vim`
+
 # Kill all affected apps
 for app in "cfprefsd" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
 	killall "${app}" > /dev/null 2>&1
