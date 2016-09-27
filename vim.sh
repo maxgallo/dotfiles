@@ -24,7 +24,6 @@ cd ..
 
 # Color scheme
 git clone https://github.com/flazz/vim-colorschemes.git colorschemes
-git clone git@github.com:yosiat/oceanic-next-vim.git # not sure if I need this one
 
 # Other plugins
 git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim

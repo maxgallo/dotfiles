@@ -50,7 +50,8 @@ function fish_prompt
 end
 
 # NVM
-set -gx NVM_DIR (brew --prefix nvm)
+#set -gx NVM_DIR (brew --prefix nvm)
+set -gx NVM_DIR ~/.nvm
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
