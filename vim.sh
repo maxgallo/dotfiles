@@ -1,4 +1,12 @@
 #!/bin/bash
+if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
+    echo "Unistalling Pathogen"
+    rm -rf ~/.vim/autoload/pathogen.vim
+    rm -rf ~/.vim/bundle
+    brew uninstall the_silver_searcher
+    brew uninstall cmake
+    exit
+fi
 
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -20,6 +28,7 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --tern-completer
+cp .tern-config ~/.tern-config # add tern config
 cd ..
 
 # Color scheme
