@@ -1,0 +1,10 @@
+[alias]
+    ci = commit
+    st = status
+    ap = add -p
+
+[core]
+    editor = /usr/local/bin/vim
+
+[user]
+    name = Brad Dougherty

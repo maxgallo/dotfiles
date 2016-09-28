@@ -1,25 +1,7 @@
+" Enable Pathogen
 execute pathogen#infect()
 filetype plugin indent on
 syntax on
-
-" Installed packange into ~/.vim/bundle/ dir
-"
-"YouCompleteMe
-"ag
-"colorschemes
-"ctrlp.vim
-"nerdcommenter
-"nerdtree
-"tern_for_vim
-"vim-fugitive
-"vim-gitgutter
-"vim-javascript
-"vim-jsdoc
-"vim-jsx
-"vim-multiple-cursors
-
-
-
 
 " General
     set timeoutlen=1000 ttimeoutlen=0 " Eliminate the delays on ESC
@@ -42,7 +24,6 @@ syntax on
     set listchars=tab:>-,trail:-
     set list
 
-
 " allow backspacing over everything in insert mode
     set backspace=indent,eol,start
 
@@ -52,8 +33,7 @@ syntax on
 " CtrlP
     let g:NERDTreeChDirMode       = 2
     let g:ctrlp_working_path_mode = 'rw'
-
-        let g:ctrlp_custom_ignore = {
+    let g:ctrlp_custom_ignore     = {
         \ 'dir':  '\v[\/](\.git|node_modules|\.sass-cache|bower_components|build|_site)$',
         \ 'file': '\v\.(exe|so|dll)$',
         \ 'link': 'some_bad_symbolic_links',

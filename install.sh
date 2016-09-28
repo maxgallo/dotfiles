@@ -26,4 +26,10 @@ if [[ $(uname) == 'Darwin' ]]; then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         ./vim.sh
     fi
+
+    read -p "Would you like to copy gitconfig file? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cp .gitconfig ~/.gitconfig
+    fi
 fi
