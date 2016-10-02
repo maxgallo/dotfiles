@@ -1,4 +1,4 @@
-# Macs' dotfiles
+# Max's dotfiles
 Inspired by: https://github.com/bdougherty/dotfiles
 
 ## What's inside
