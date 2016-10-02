@@ -64,6 +64,13 @@ syntax on
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 
+" View navigation
+    "Resize view splits with + & -
+    nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+    nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+    "Cycle to views with double tab
+    nnoremap <silent> <Tab><Tab> <C-w>w
+
 " Syntastic
    " set statusline+=%#warningmsg#
    " set statusline+=%{SyntasticStatuslineFlag()}
