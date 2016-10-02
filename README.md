@@ -25,5 +25,3 @@ There will be two alias: "latest" and "lts/argon" to use with nvm
 
 ## Also useful
 iTerm2 color scheme: https://github.com/mhartington/oceanic-next-iterm
-Vim color scheme: https://github.com/mhartington/oceanic-next
-
