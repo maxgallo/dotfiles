@@ -36,9 +36,6 @@ set fish_pager_color_prefix C594C5      # suggestion prefix
 set fish_pager_color_completion 6699CC # suggestion completition
 set fish_color_redirection yellow
 
-#set fish_function_path $fish_function_path "/Users/max.gallo/Library/Python/2.7/lib/python/site-packages/powerline/bindings/fish"
-#powerline-setup
-
 function fish_prompt
     ~/powerline-shell/powerline-shell.py $status --shell bare ^/dev/null --colorize-hostname
 end

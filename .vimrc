@@ -8,7 +8,7 @@ syntax on
     set number                        " Show line number
 
 " Powerline
-    set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim/
+    set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
     set laststatus=2
     set t_Co=256
 
