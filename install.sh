@@ -21,6 +21,8 @@ if [[ $(uname) == 'Darwin' ]]; then
         . ./fish.sh    # with the leading dot, fish.sh is executed in the same shell, so they can share variables
     fi
 
+    cd $DOTFILES_FOLDER
+
     read -p "Would you like to set up Vim? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then

@@ -9,20 +9,20 @@ set -gx OMF_PATH "/Users/"$USER"/.local/share/omf"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # fish related
-alias edfish "sublime ~/.config/fish/config.fish"
+alias edfish "vim ~/.config/fish/config.fish"
 alias fish_reload_config "source ~/.config/fish/config.fish"
 alias server "python -m SimpleHTTPServer"
 alias sslserver "python ~/scripts/sslserver.py"
 alias ll "ls -al"
-alias nodefolder "echo /usr/local/opt/nvm/versions/node/v5.7.1/bin/node"
-alias ednginx "vim /usr/local/etc/nginx/nginx.conf"
+alias nodefolder "echo (nvm which latest)"
 
 # set -g fish_term24bit 1
 # fish related commands
 # fish_config : opens the browser with the config web
 
-set -x GOPATH ~ # the -x flag exports the variable
-set PATH $PATH $GOPATH/bin
+# GO stuff
+#set -x GOPATH ~ # the -x flag exports the variable
+#set PATH $PATH $GOPATH/bin
 
 # powerline specific
 alias powerline-update "powerline-daemon --replace"
