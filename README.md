@@ -6,7 +6,7 @@ Inside you'll find the configuration for macOS with the following
 - Fish shell: https://fishshell.com/
 - Powerline shell: https://github.com/banga/powerline-shell
 - Nvm (inside Fish Shell): https://github.com/creationix/nvm
-- Vim with a tons of plugin for a front end dev (focus on React & ES6)
+- Vim with tons of plugin for front end dev (focus on React & ES6)
 
 ## Installation
 
