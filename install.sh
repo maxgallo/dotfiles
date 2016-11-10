@@ -35,3 +35,7 @@ if [[ $(uname) == 'Darwin' ]]; then
         cp .gitconfig ~/.gitconfig
     fi
 fi
+
+# other stuff to do
+#gem install bundler
+

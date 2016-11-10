@@ -39,6 +39,9 @@ git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone https://github.com/scrooloose/nerdtree.git nerdtree
 git clone https://github.com/ternjs/tern_for_vim.git
+cd tern_for_vim/
+npm install
+cd ..
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
