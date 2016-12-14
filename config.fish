@@ -44,6 +44,9 @@ end
 #set -gx NVM_DIR (brew --prefix nvm)
 set -gx NVM_DIR ~/.nvm
 
+# Vim related
+alias edvim "vim ~/.vimrc"
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # my stuff - END

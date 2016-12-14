@@ -28,7 +28,7 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --clang-completer --tern-completer
-cp .tern-config ~/.tern-config # add tern config
+cp $DOTFILES_FOLDER/.tern-config ~/.tern-config # add tern config
 cd ..
 
 # Color scheme

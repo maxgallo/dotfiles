@@ -26,7 +26,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     read -p "Would you like to set up Vim? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ./vim.sh
+        . ./vim.sh    # with the leading dot, fish.sh is executed in the same shell, so they can share variables
     fi
 
     read -p "Would you like to copy gitconfig file? (y/n) " -n 1 -r
