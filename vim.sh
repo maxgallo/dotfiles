@@ -47,6 +47,7 @@ git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 git clone git://github.com/tpope/vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
