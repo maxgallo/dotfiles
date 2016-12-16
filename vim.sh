@@ -54,3 +54,6 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
 # Install powerline
 pip install powerline-status
+
+# This fix the error while commit with git using vim
+git config --global core.editor /usr/bin/vim
