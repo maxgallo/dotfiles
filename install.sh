@@ -34,6 +34,12 @@ if [[ $(uname) == 'Darwin' ]]; then
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp .gitconfig ~/.gitconfig
     fi
+
+    read -p "Would you like install npm dependencies? (y/n)" -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        . ./npm.sh 
+    fi
 fi
 
 # other stuff to do
