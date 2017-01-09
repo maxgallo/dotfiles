@@ -1,5 +1,5 @@
 #!/bin/bash
-DOTFILES_FOLDER=~/src/github/maxgallo/dotfiles
+DOTFILES_FOLDER=~/github/maxgallo/dotfiles
 
 # Install stuff on  on OS X
 if [[ $(uname) == 'Darwin' ]]; then

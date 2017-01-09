@@ -11,7 +11,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     rm -rf ~/.nvm/
     exit
 fi
-DOTFILES_FOLDER="/Users/$(whoami)/src/github/maxgallo/dotfiles"
+DOTFILES_FOLDER="/Users/$(whoami)/github/maxgallo/dotfiles"
 
 
 # Make sure homebrew is installed first
