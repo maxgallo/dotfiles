@@ -2,6 +2,8 @@
     ci = commit
     st = status
     ap = add -p
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    zip = !sh -c 'git archive HEAD --format=zip > archive.zip'
 
 [core]
     editor = /usr/local/bin/vim
