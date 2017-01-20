@@ -7,6 +7,8 @@
 # prompt. Any segment you add must be present in the segments/ directory
 
 SEGMENTS = [
+    'bash_or_fish',
+
 # Set the terminal window title to user@host:dir
 #    'set_term_title',
 
