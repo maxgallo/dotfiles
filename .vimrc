@@ -71,6 +71,9 @@ syntax on
     "Cycle to views with double tab
     nnoremap <silent> <Tab><Tab> <C-w>w
 
+" Vim + Ctags Ctrlp
+    nnoremap <leader>. :CtrlPTag<cr>
+
 " Syntastic
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -82,3 +85,6 @@ syntax on
     let g:syntastic_check_on_wq = 0
     let g:syntastic_javascript_checkers = ['eslint']
 
+ " Haxe stuff
+    "set completeopt=menu
+    "set autowrite

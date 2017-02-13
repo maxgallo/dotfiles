@@ -49,6 +49,8 @@ git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
+git clone https://github.com/craigemery/vim-autotag.git
+
 git clone git://github.com/tpope/vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
@@ -57,3 +59,7 @@ pip install powerline-status
 
 # This fix the error while commit with git using vim
 git config --global core.editor /usr/bin/vim
+
+# ctags
+brew install ctags
+cp $DOTFILES_FOLDER/.ctags ~/.ctags
