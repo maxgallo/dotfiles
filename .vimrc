@@ -88,3 +88,10 @@ syntax on
  " Haxe stuff
     "set completeopt=menu
     "set autowrite
+
+ " CSS3 Syntax
+    augroup VimCSS3Syntax
+        autocmd!
+
+        autocmd FileType css setlocal iskeyword+=-
+    augroup END
