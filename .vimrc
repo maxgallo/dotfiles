@@ -85,9 +85,6 @@ syntax on
     let g:syntastic_check_on_wq = 0
     let g:syntastic_javascript_checkers = ['eslint']
 
- " Haxe stuff
-    "set completeopt=menu
-    "set autowrite
 
  " CSS3 Syntax
     augroup VimCSS3Syntax
@@ -95,3 +92,6 @@ syntax on
 
         autocmd FileType css setlocal iskeyword+=-
     augroup END
+
+" Remove the window with function definition
+    set completeopt=menu
