@@ -1,0 +1,6 @@
+{
+    extends : /Users/max.gallo/.nvm/versions/node/v7.4.0/lib/node_modules/stylelint-config-standard,
+    rules : {
+        indentation: 4
+    }
+}

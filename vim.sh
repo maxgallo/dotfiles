@@ -50,6 +50,7 @@ git clone https://github.com/terryma/vim-multiple-cursors.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 git clone https://github.com/craigemery/vim-autotag.git
+git clone git://github.com/tpope/vim-surround.git
 
 # CSSNext support
 git clone https://github.com/hail2u/vim-css3-syntax.git
@@ -66,3 +67,12 @@ git config --global core.editor /usr/bin/vim
 # ctags
 brew install ctags
 cp $DOTFILES_FOLDER/.ctags ~/.ctags
+
+
+
+
+
+
+# linters - CSS
+npm install -g stylelint stylelint-config-standard
+cp $DOTFILES_FOLDER/.stylelint ~/.stylelint

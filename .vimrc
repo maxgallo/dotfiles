@@ -84,7 +84,7 @@ syntax on
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_javascript_checkers = ['eslint']
-
+    let g:syntastic_css_checkers = ['stylelint']
 
  " CSS3 Syntax
     augroup VimCSS3Syntax
