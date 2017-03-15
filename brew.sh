@@ -13,3 +13,4 @@ brew update
 brew install git
 brew install vim
 brew install htop
+brew install yarn
