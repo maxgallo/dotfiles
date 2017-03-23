@@ -58,7 +58,7 @@ syntax on
     colorscheme OceanicNext
 
 " vim-jsx
-    let g:jsx_ext_required = 0
+    let g:jsx_ext_required = 0 " no mandatory .jsx for files
 
 " Enabling CSS autocomplete on .scss .css file
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -95,3 +95,9 @@ syntax on
 
 " Remove the window with function definition
     set completeopt=menu
+
+" TypeSCript
+    "autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+    "autocmd BufEnter *.tsx set filetype=typescript
+    "autocmd BufEnter *.tsx set filetype=javascript.jsx
+
