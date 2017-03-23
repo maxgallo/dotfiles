@@ -1,5 +1,7 @@
 #!/bin/bash
-DOTFILES_FOLDER=~/github/maxgallo/dotfiles
+
+# load variables
+. ./var.sh
 
 # Install stuff on  on OS X
 if [[ $(uname) == 'Darwin' ]]; then
@@ -42,6 +44,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     fi
 fi
 
-# other stuff to do
-#gem install bundler
+# copy bashrc
+cp .bashrc ~/.bashrc
+cp .bash_profile ~/.bash_profile
 

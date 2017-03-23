@@ -8,6 +8,10 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     exit
 fi
 
+# Variables
+PATHOGEN_PATH=~/.vim/bundle
+
+
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -20,7 +24,7 @@ cd ~/.vim/bundle/
 
 # Silver Searcher - search in the whole project
 brew install the_silver_searcher
-git clone https://github.com/rking/ag.vim ag
+git clone https://github.com/rking/ag.vim $PATHOGEN_PATH/ag
 
 # You Complete Me - autocomplete
 brew install cmake
@@ -67,24 +71,3 @@ git config --global core.editor /usr/bin/vim
 # ctags
 brew install ctags
 cp $DOTFILES_FOLDER/.ctags ~/.ctags
-
-
-# TypeScript
-git clone https://github.com/leafgarland/typescript-vim.git
-
-## Typescript Required for tsuquyomi:
-## Install and compile procvim.vim
-git clone https://github.com/Shougo/vimproc.vim.git ~/.vim/bundle/vimproc.vim
-pushd ~/.vim/bundle/vimproc.vim
-make
-popd
-## Install tsuquyomi
-git clone https://github.com/Quramy/tsuquyomi.git ~/.vim/bundle/tsuquyomi
-## Vim TSX for jsx TypeScript component
-git clone https://github.com/ianks/vim-tsx.git ~/.vim/bundle/vim-tsx
-
-
-
-# linters - CSS
-npm install -g stylelint stylelint-config-standard
-cp $DOTFILES_FOLDER/.stylelint ~/.stylelint

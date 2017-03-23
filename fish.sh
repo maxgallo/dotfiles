@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# load variables
+. ./var.sh
+
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "omf uninstall nvm" | fish
     echo "Uninstalling Oh My Fish"
@@ -11,7 +15,6 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     rm -rf ~/.nvm/
     exit
 fi
-DOTFILES_FOLDER="/Users/$(whoami)/github/maxgallo/dotfiles"
 
 
 # Make sure homebrew is installed first
@@ -21,14 +24,7 @@ if [[ ! "$(type -P brew)" ]]; then
 fi
 
 # Installine powerline shell
-echo "Installing Powerline Shell"
-cd ~
-rm -rf powerline-shell
-git clone git@github.com:maxgallo/powerline-shell.git
-cd powerline-shell/ 
-cp $DOTFILES_FOLDER/powerline-shell-config.py config.py #cp config.py.dist config.py
-./install.py
-cd $DOTFILES_FOLDER
+./powerlineShell/powerlineShell.sh
 
 # Install fish && nvm
 if [[ ! "$(type -P fish)" ]]; then
