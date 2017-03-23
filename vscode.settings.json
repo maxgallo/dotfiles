@@ -1,0 +1,6 @@
+{
+    "editor.fontSize": 13,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
+    "terminal.integrated.fontSize": 13
+}
