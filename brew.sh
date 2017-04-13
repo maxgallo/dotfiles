@@ -14,3 +14,4 @@ brew install git
 brew install vim
 brew install htop
 brew install yarn
+brew install tree
