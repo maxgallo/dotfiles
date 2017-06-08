@@ -100,4 +100,6 @@ syntax on
     "autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
     "autocmd BufEnter *.tsx set filetype=typescript
     "autocmd BufEnter *.tsx set filetype=javascript.jsx
-
+    "
+" Tries to fixes bash completition
+    set isfname-==
