@@ -9,6 +9,8 @@
 SEGMENTS = [
     'bash_or_fish',
 
+    'node_version',
+
 # Set the terminal window title to user@host:dir
 #    'set_term_title',
 
