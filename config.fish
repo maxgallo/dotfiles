@@ -15,6 +15,7 @@ alias server "python -m SimpleHTTPServer"
 alias sslserver "python ~/scripts/sslserver.py"
 alias ll "ls -al"
 alias nodefolder "echo (nvm which latest)"
+alias airport "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 
 # set -g fish_term24bit 1
 # fish related commands
