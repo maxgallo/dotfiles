@@ -65,11 +65,21 @@ syntax on
     autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 
 " View navigation
-    "Resize view splits with + & -
+    "Resize vertical view splits with + & -
     nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+    " Resize horizontal view splits with
+    nnoremap <silent> ] :vertical resize +10<CR>
+    nnoremap <silent> [ :vertical resize -10<CR>
+
     "Cycle to views with double tab
     nnoremap <silent> <Tab><Tab> <C-w>w
+
+    "Navigating through windows
+    nnoremap <silent> <Tab><Up> :wincmd k<CR>
+    nnoremap <silent> <Tab><Down> :wincmd j<CR>
+    nnoremap <silent> <Tab><Left> :wincmd h<CR>
+    nnoremap <silent> <Tab><Right> :wincmd l<CR>
 
 " Vim + Ctags Ctrlp
     nnoremap <leader>. :CtrlPTag<cr>
