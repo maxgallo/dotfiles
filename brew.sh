@@ -16,3 +16,4 @@ brew install htop
 brew install yarn
 brew install tree
 brew install diff-so-fancy
+brew install exa

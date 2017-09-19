@@ -13,7 +13,7 @@ alias edfish "vim ~/.config/fish/config.fish"
 alias fish_reload_config "source ~/.config/fish/config.fish"
 alias server "python -m SimpleHTTPServer"
 alias sslserver "python ~/scripts/sslserver.py"
-alias ll "ls -al"
+alias ll "exa -bgHliS"
 alias nodefolder "echo (nvm which latest)"
 alias airport "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
 
