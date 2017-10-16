@@ -30,6 +30,10 @@ syntax on
 " NERDTree configuration
     autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 
+" NERDCommenter
+    let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
+
+
 " CtrlP
     let g:NERDTreeChDirMode       = 2
     let g:ctrlp_working_path_mode = 'rw'
