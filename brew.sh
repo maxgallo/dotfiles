@@ -17,3 +17,4 @@ brew install yarn
 brew install tree
 brew install diff-so-fancy
 brew install exa
+brew install watch
