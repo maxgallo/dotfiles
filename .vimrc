@@ -97,8 +97,11 @@ syntax on
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
-    let g:syntastic_javascript_checkers = ['eslint']
     let g:syntastic_css_checkers = ['stylelint']
+    " Enable the eslint checker
+    let g:syntastic_javascript_checkers = ['eslint']
+    " Point the checker to the locally installed version of eslint
+    let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
  " CSS3 Syntax
     augroup VimCSS3Syntax
