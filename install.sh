@@ -23,6 +23,12 @@ if [[ $(uname) == 'Darwin' ]]; then
         ./python.sh
     fi
 
+    read -p "Would you like to install AI related libraries? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ./ai.sh
+    fi
+
     read -p "Would you like to set up Fish Shell ? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
