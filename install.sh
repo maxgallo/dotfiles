@@ -17,6 +17,12 @@ if [[ $(uname) == 'Darwin' ]]; then
         ./macos.sh
     fi
 
+    read -p "Would you like to install python 3.5.4? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ./python.sh
+    fi
+
     read -p "Would you like to set up Fish Shell ? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
