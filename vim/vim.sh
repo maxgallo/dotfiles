@@ -13,9 +13,10 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "Unistalling 'brew' related packages"
     brew uninstall the_silver_searcher
     brew uninstall cmake
-    brew uninstall ctags
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
+    echo "Uninstalling Powerline Status"
+    pip uninstall -y powerline-status
     exit
 fi
 
@@ -52,15 +53,6 @@ git submodule update --init --recursive
 ./install.py --clang-completer
 cd ..
 
-
-
-# git clone https://github.com/ternjs/tern_for_vim.git
-# cd tern_for_vim/
-# npm install
-# cd ..
-
-# cp $DOTFILES_FOLDER/vim/.tern-config ~/.tern-config
-
 # Color scheme
 logStep "Installing Color Scheme"
 git clone https://github.com/flazz/vim-colorschemes.git colorschemes
@@ -75,10 +67,9 @@ git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
-git clone https://github.com/craigemery/vim-autotag.git
 git clone git://github.com/tpope/vim-surround.git
 
-# Asynchronous linting engine
+# Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
 
 # CSSNext support
@@ -89,12 +80,7 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
 # Install powerline
 logStep "Installing Powerline Status"
-pip3 install powerline-status
+pip install powerline-status
 
 # This fix the error while commit with git using vim
 git config --global core.editor /usr/bin/vim
-
-# ctags
-logStep "Setting Up Ctags"
-brew install ctags
-cp $DOTFILES_FOLDER/vim/.ctags ~/.ctags
