@@ -18,3 +18,4 @@ brew install tree
 brew install diff-so-fancy
 brew install exa
 brew install watch
+brew install jq # parse json response https://stedolan.github.io/jq/
