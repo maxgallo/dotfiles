@@ -16,7 +16,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
     echo "Uninstalling Powerline Status"
-    pip uninstall -y powerline-status
+    pip3 uninstall -y powerline-status
     exit
 fi
 
@@ -80,7 +80,7 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
 # Install powerline
 logStep "Installing Powerline Status"
-pip install powerline-status
+pip3 install powerline-status
 
 # This fix the error while commit with git using vim
 git config --global core.editor /usr/bin/vim
