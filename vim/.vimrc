@@ -33,7 +33,6 @@ syntax on
 " NERDCommenter
     let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
 
-
 " CtrlP
     let g:NERDTreeChDirMode       = 2
     let g:ctrlp_working_path_mode = 'rw'
@@ -89,6 +88,7 @@ syntax on
     nnoremap <leader>. :CtrlPTag<cr>
 
 " Ale
+    let b:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
     let g:ale_open_list = 1
     let g:ale_list_window_size = 5
 
@@ -109,3 +109,25 @@ syntax on
     "
 " Tries to fixes bash completition
     set isfname-==
+
+" You Complete Me
+    let g:ycm_complete_in_comments = 1
+    let g:ycm_complete_in_strings = 1
+    let g:ycm_collect_identifiers_from_comments_and_strings = 1
+    " This was checkin for errors same way ALE already is doing, and I want to
+    " use Ale for this
+    let g:ycm_show_diagnostics_ui = 0
+
+    " Don't ask me why but jsx files are disabled by default
+    let g:ycm_filepath_blacklist = {
+      \}
+
+    "Smart GoTo
+    nnoremap gt :YcmCompleter GoTo<CR>
+
+" Remove Trailing spaces on save
+    autocmd BufWritePre <buffer> %s/\s\+$//e
+
+" Other command
+    " Use 'gb' lie Ctrl-o to go back after a navigation
+    nnoremap <silent> gb <C-o>
