@@ -8,14 +8,24 @@ set -gx OMF_PATH "/Users/"$USER"/.local/share/omf"
 # my stuff - START
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# fish related
+# ALIASES
+
+# ALIASES - fish related
 alias edfish "vim ~/.config/fish/config.fish"
 alias fish_reload_config "source ~/.config/fish/config.fish"
+
+# ALIASES - utilities
 alias server "python -m SimpleHTTPServer"
 alias sslserver "python ~/scripts/sslserver.py"
-alias ll "exa -bgHliS"
 alias nodefolder "echo (nvm which latest)"
 alias airport "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+
+# ALIASES - functionality replacements
+alias ll "exa -bgHliS"
+alias cat "bat"
+alias ping "prettyping --nolegend"
+alias du2 "ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias help "tldr"
 
 # set -g fish_term24bit 1
 # fish related commands
@@ -42,7 +52,6 @@ function fish_prompt
 end
 
 # NVM
-#set -gx NVM_DIR (brew --prefix nvm)
 set -gx NVM_DIR ~/.nvm
 
 # Vim related

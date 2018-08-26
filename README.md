@@ -1,5 +1,5 @@
 # Max's dotfiles
-Inspired by: https://github.com/bdougherty/dotfiles
+My personal collection of dotfiles
 
 ## What's inside
 Inside you'll find the configuration for macOS with the following
@@ -25,3 +25,7 @@ There will be two alias: "latest" and "lts/argon" to use with nvm
 
 ## Also useful
 iTerm2 color scheme: https://github.com/mhartington/oceanic-next-iterm
+
+## Thanks to
+- Project that made me start: https://github.com/bdougherty/dotfiles
+- Article about improvements: https://remysharp.com/2018/08/23/cli-improved
