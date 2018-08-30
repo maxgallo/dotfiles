@@ -1,0 +1,13 @@
+{
+    "segments": [
+        "virtual_env",
+        "~/.config/powerline-shell/custom-segments/bash_or_fish.py",
+        "~/.config/powerline-shell/custom-segments/node_version.py",
+        "ssh",
+        "cwd",
+        "git",
+        "hg",
+        "jobs",
+        "root"
+    ]
+}

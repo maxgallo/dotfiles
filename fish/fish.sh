@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # load variables
-. ./var.sh
+. ../var.sh
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "omf uninstall nvm" | fish
@@ -10,7 +10,9 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     fish install --uninstall
     brew uninstall fish      # removing fish
     echo "Uninstalling powerline"
-    rm -rf ~/powerline-shell # removing powerline
+    rm -rf ~/powerline-shell # removing old version of powerline
+    pip3 uninstall -y powerline-shell # removing new version of powerline shell
+    rm -rf ~/.config/powerline-shell
     echo "Uninstalling nvm"
     rm -rf ~/.nvm/
     exit
@@ -24,7 +26,11 @@ if [[ ! "$(type -P brew)" ]]; then
 fi
 
 # Installine powerline shell
-./powerlineShell/powerlineShell.sh
+pip3 install powerline-shell
+mkdir -p ~/.config/powerline-shell/custom-segments
+cp $DOTFILES_FOLDER/fish/powerline-shell/custom-segments/*.py ~/.config/powerline-shell/custom-segments/
+cp $DOTFILES_FOLDER/fish/powerline-shell/config.json ~/.config/powerline-shell/config.json
+
 
 # Install fish && nvm
 if [[ ! "$(type -P fish)" ]]; then
@@ -43,7 +49,7 @@ fi
 
 # Copying fish configuration
 echo "Copy Fish configuration file"
-cp $DOTFILES_FOLDER/config.fish ~/.config/fish/config.fish
+cp $DOTFILES_FOLDER/fish/config.fish ~/.config/fish/config.fish
 
 # Install node with nvm using "latest" and "lts" alias
 LATEST_NODE_VERSION=$(echo "nvm ls-remote --no-colors | awk 'END{print}'" | fish | awk '{print $1}')

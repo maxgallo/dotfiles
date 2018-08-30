@@ -48,7 +48,7 @@ set fish_pager_color_completion 6699CC # suggestion completition
 set fish_color_redirection yellow
 
 function fish_prompt
-    ~/powerline-shell/powerline-shell.py $status --shell bare ^/dev/null --colorize-hostname
+    powerline-shell --shell bare $status
 end
 
 # NVM
