@@ -25,3 +25,7 @@ brew install fd # user-friendly find alternative https://github.com/sharkdp/fd/
 brew install ncdu # better du
 brew install tldr # better man https://github.com/tldr-pages/tldr/
 brew install noti # notification from terminal https://github.com/variadico/noti
+
+# Quick look plugins
+# https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize
