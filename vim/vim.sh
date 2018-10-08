@@ -68,6 +68,7 @@ git clone https://github.com/heavenshell/vim-jsdoc.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
 git clone git://github.com/tpope/vim-surround.git
+git clone git://github.com/jiangmiao/auto-pairs.git # autoinsert brakets
 
 # Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
