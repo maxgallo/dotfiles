@@ -16,7 +16,7 @@
     publish = "!git push --set-upstream origin $(git branch-name)"
 
 [core]
-    editor = /usr/local/bin/vim
+    editor = vim
 
 [user]
     name = Max Gallo

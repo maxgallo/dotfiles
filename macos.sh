@@ -9,10 +9,10 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 defaults write com.apple.dock wvous-tr-corner -int 3
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left → Desktop
-defaults write com.apple.dock wvous-bl-corner -int 4 
+defaults write com.apple.dock wvous-bl-corner -int 4
 defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right → Sleep
-defaults write com.apple.dock wvous-br-corner -int 10 
+defaults write com.apple.dock wvous-br-corner -int 10
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 
@@ -31,11 +31,15 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Enable full keyboard access for all controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Running "always boot in verbose mode (not OSX GUI mode)"
+sudo nvram boot-args="-v" # to reset: sudo nvram boot-args=""
+
 
 # Git, use vim as editor
 git config --global core.editor `which vim`
 
 # Kill all affected apps
 for app in "cfprefsd" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
-	killall "${app}" > /dev/null 2>&1
+    killall "${app}" > /dev/null 2>&1
 done
+
