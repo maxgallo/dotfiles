@@ -45,6 +45,7 @@ if [[ ! "$(type -P omf)" ]]; then
     curl -L http://get.oh-my.fish > install
     fish install --noninteractive --yes
     echo "omf install nvm" | fish
+    echo "omf install aws" | fish # AWS cli autocompletion for fish
 fi
 
 # Copying fish configuration
