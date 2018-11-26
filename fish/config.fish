@@ -57,6 +57,8 @@ set -gx NVM_DIR ~/.nvm
 # Vim related
 alias edvim "vim ~/.vimrc"
 
+# Vi bindings
+fish_vi_key_bindings
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # my stuff - END
