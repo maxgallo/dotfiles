@@ -69,6 +69,7 @@ git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/terryma/vim-multiple-cursors.git
 git clone git://github.com/tpope/vim-surround.git
 git clone git://github.com/jiangmiao/auto-pairs.git # autoinsert brakets
+git clone https://github.com/roryokane/detectindent.git # enables :DetectIndent
 
 # Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
