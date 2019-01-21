@@ -11,7 +11,7 @@ Inside you'll find the configuration for macOS with the following
 ## Installation
 
 ```bash
-git clone https://github.com/maxgallo/dotfiles && cd dotfiles && source install.sh
+git clone https://github.com/pietropeluso/dotfiles && cd dotfiles && source install.sh
 ```
 
 ## Updating (not ready yet)
