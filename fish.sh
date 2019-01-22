@@ -47,6 +47,7 @@ fi
 # Copying fish configuration
 echo "Copy Fish configuration file"
 cp $DOTFILES_FOLDER/config.fish ~/.config/fish/config.fish
+rm -rf ~/.config/fish/conf.d
 
 # Install node with nvm using "latest" and "lts" alias
 LATEST_NODE_VERSION=$(echo "nvm ls-remote --no-colors | awk 'END{print}'" | fish | awk '{print $1}')
