@@ -1,2 +1,2 @@
 #!/bin/bash
-DOTFILES_FOLDER="~/source/dotfiles"
+DOTFILES_FOLDER="/Users/$(whoami)/source/dotfiles"
