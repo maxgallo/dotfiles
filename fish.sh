@@ -26,6 +26,9 @@ fi
 # Installine powerline shell
 ./powerlineShell/powerlineShell.sh
 
+# Creating a folder to be used by chrome when running with web-security disabled
+mkdir -p ~/chrome/cache
+
 # Install fish && nvm
 if [[ ! "$(type -P fish)" ]]; then
     echo "Installing Fish"
