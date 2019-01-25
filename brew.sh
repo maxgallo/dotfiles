@@ -29,3 +29,23 @@ brew install noti # notification from terminal https://github.com/variadico/noti
 # Quick look plugins
 # https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize
+
+brew cask install \
+    iterm2 \ # better terminal
+    drawio \ # Macosx desktop client
+    macdown \ # Markdown client
+    visual-studio-code \
+    slack \
+    charles \ # Proxy
+    virtualbox \
+    notion \
+    docker \
+    dropbox
+
+# Browsers
+brew cask install \
+    google-chrome \
+    google-chrome-canary \
+    firefox \
+    firefox-developer-edition \
+    firefox-nightly

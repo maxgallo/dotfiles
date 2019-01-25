@@ -8,15 +8,12 @@
     zip = !sh -c 'git archive HEAD --format=zip > archive.zip'
     unstage = reset HEAD
     uncommit = reset HEAD^
-
-    #
-    ## Working with branches
-    ##
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     publish = "!git push --set-upstream origin $(git branch-name)"
 
 [core]
     editor = vim
+    ignorecase = false
 
 [user]
     name = Max Gallo

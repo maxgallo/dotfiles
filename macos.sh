@@ -1,7 +1,10 @@
 # Dark mode and reduce transparency
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
-# Hot Corners
+###############
+# Hot Corners #
+###############
+
 # Top left → Mission control
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
@@ -14,6 +17,13 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right → Sleep
 defaults write com.apple.dock wvous-br-corner -int 10
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############
+#   Dock      #
+###############
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool false
 
 
 # Don’t open Photos when plugging in an iPhone
@@ -31,9 +41,8 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Enable full keyboard access for all controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Running "always boot in verbose mode (not OSX GUI mode)"
-sudo nvram boot-args="-v" # to reset: sudo nvram boot-args=""
-
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Git, use vim as editor
 git config --global core.editor `which vim`
