@@ -52,24 +52,25 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 
     for i in "${brew_packages[@]}"
     do
-    :
-    brew uninstall "$i"
+        :
+        brew uninstall "$i"
     done
 
     echo "Uninstalling Brew Cask packages"
 
     for i in "${brew_cask_packages[@]}"
     do
-    :
-    brew cask uninstall "$i"
+        :
+        brew cask uninstall "$i"
     done
-    exit
 
     # If Brew exists, uninstalling it
     if [[ "$(type -P brew)" ]]; then
         echo "Uninstalling Brew"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
     fi
+
+    exit
 fi
 
 # Make sure homebrew is installed first
