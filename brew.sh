@@ -2,12 +2,10 @@
 source ./utils/confirm.sh
 
 brew_packages=(
-    git
     vim
     htop
     yarn
     tree
-    diff-so-fancy # better diff for git
     exa # ls replacement https://github.com/ogham/exa
     watch
     jq # parse json response https://stedolan.github.io/jq/
