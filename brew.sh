@@ -81,7 +81,7 @@ brew tap caskroom/cask
 brew doctor
 brew update
 
-echo "Installing brew packages"
+echo "Installing Brew packages"
 
 for i in "${brew_packages[@]}"
 do
@@ -89,9 +89,9 @@ do
    brew install "$i"
 done
 
-echo "Installing Cask"
+echo "Installing Cask packages"
 
-for i in "${brew_packages[@]}"
+for i in "${brew_cask_packages[@]}"
 do
    :
    brew cask install "$i"
