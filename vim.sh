@@ -1,27 +1,34 @@
 #!/bin/bash
 
-# load variables
-. ../var.sh
-. ../output.sh
+source ./utils/confirm.sh
+source ./utils/config.sh
+source ./utils/log.sh
 
 # Remove if --remove variable is present
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
+    confirm "Are you sure you want to uninstall VIM and reset the configuration?" || exit
+
     echo "Unistalling Pathogen"
     rm -rf ~/.vim/autoload/pathogen.vim
+
     echo "Unistalling All Vim plugins"
     rm -rf ~/.vim/bundle
+
     echo "Unistalling 'brew' related packages"
     brew uninstall the_silver_searcher
     brew uninstall cmake
+
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
+
     echo "Uninstalling Powerline Status"
     pip3 uninstall -y powerline-status
+
     exit
 fi
 
 # Variables
-PATHOGEN_PATH=~/.vim/bundle
+pathogen_path=~/.vim/bundle
 
 # Install pathogen
 logStep "Installing Pathogen"
@@ -29,17 +36,17 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Copy config file
-logStep "Copying 'vimrc' file"
-cp ./.vimrc ~/.vimrc
+logStep "Symlinking .vimrc file"
+ln -s "$dotfiles_folder/vim/.vimrc" ~/.vimrc
 
 # Change folder to pathogen bundle folder
-cd ~/.vim/bundle/
+cd ~/.vim/bundle/ || exit
 
 # Silver Searcher - search in the whole project
 logStep "Installing Silver Searcher"
 
 brew install the_silver_searcher
-git clone https://github.com/rking/ag.vim $PATHOGEN_PATH/ag
+git clone https://github.com/rking/ag.vim $pathogen_path/ag
 
 # You Complete Me & TSServer - autocomplete
 logStep "Installing You Complete Me & TSServer"
@@ -48,10 +55,11 @@ npm install -g typescript
 
 brew install cmake
 git clone https://github.com/Valloric/YouCompleteMe.git
-cd YouCompleteMe
+(
+cd YouCompleteMe || exit
 git submodule update --init --recursive
 ./install.py --clang-completer
-cd ..
+)
 
 # Color scheme
 logStep "Installing Color Scheme"
