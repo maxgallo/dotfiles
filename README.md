@@ -1,27 +1,20 @@
 # Max's dotfiles
-My personal collection of dotfiles
+My personal collection of dotfiles.
 
-## What's inside
-Inside you'll find the configuration for macOS with the following
-- Fish shell: https://fishshell.com/
-- Powerline shell: https://github.com/banga/powerline-shell (font https://github.com/powerline/fonts/tree/master/Meslo)
-- Nvm (inside Fish Shell): https://github.com/creationix/nvm
-- Vim with tons of plugin for front end dev (focus on React & ES6)
+## Info
+For each script, there's a `--remove` option to uninstall that feature
 
-## Installation
-
+## Order of installation
 ```bash
-git clone https://github.com/maxgallo/dotfiles && cd dotfiles && source install.sh
+./macos.sh
+./brew.sh
+./git.sh
+./tmux.sh
+./vim.sh
+./fish.sh
+./nvm.sh
+./vscode.sh
 ```
-
-## Updating (not ready yet)
-```bash
-cd ~/dotfiles
-git pull
-```
-
-## Nvm & Node
-There will be two alias: "latest" and "lts/argon" to use with nvm
 
 ## Also useful
 iTerm2 color scheme: https://github.com/mhartington/oceanic-next-iterm
@@ -29,3 +22,4 @@ iTerm2 color scheme: https://github.com/mhartington/oceanic-next-iterm
 ## Thanks to
 - Project that made me start: https://github.com/bdougherty/dotfiles
 - Article about improvements: https://remysharp.com/2018/08/23/cli-improved
+- Huge dotfiles collection: https://github.com/mathiasbynens/dotfiles
