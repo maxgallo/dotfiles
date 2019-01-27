@@ -92,6 +92,3 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 # Install powerline
 logStep "Installing Powerline Status"
 pip3 install powerline-status
-
-# This fix the error while commit with git using vim
-git config --global core.editor /usr/bin/vim
