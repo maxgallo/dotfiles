@@ -1,4 +1,5 @@
 #!/bin/bash
+source ./utils/confirm.sh
 
 brew_packages=(
     git
@@ -47,7 +48,7 @@ brew_cask_packages=(
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
-    echo "Uninstalling Brew packages"
+    confirm "Are you sure you want to disinstall Brew and all the packages?" || exit
 
     for i in "${brew_packages[@]}"
     do
