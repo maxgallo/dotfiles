@@ -53,7 +53,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     for i in "${brew_packages[@]}"
     do
     :
-    brew install "$i"
+    brew uninstall "$i"
     done
 
     echo "Uninstalling Brew Cask packages"
@@ -61,7 +61,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     for i in "${brew_cask_packages[@]}"
     do
     :
-    brew cask install "$i"
+    brew cask uninstall "$i"
     done
     exit
 
