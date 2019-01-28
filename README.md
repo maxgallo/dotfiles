@@ -10,14 +10,15 @@ You can both install and uninstall each single thing.
 
 ## Available Scripts
 ```bash
-./macos.sh
-./brew.sh
-./git.sh
-./tmux.sh
-./vim.sh
-./fish.sh
-./nvm.sh
-./iterm.sh
+./macos.sh  # Set all macOS defaults
+./brew.sh   # Applications and scripts
+./git.sh    # GIT setup & aliases
+./tmux.sh   # tmux & aliases
+./vim.sh    # VIM with all plugins
+./fish.sh   # Fish shell
+./bash.sh   # Minimum Bash setup
+./nvm.sh    # Nvm with multiple Node installed
+./iterm.sh  # iTerm2 with custom profiles
 
 cd more
 ./awscli
