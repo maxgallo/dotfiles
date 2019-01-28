@@ -42,7 +42,6 @@ brew_cask_packages=(
     qlstephen
     qlmarkdown
     quicklook-json
-    qlimagesize
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
@@ -78,6 +77,7 @@ if [[ ! "$(type -P brew)" ]]; then
 fi
 
 brew tap caskroom/cask
+brew tap homebrew/cask-versions
 brew doctor
 brew update
 
