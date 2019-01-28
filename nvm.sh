@@ -5,8 +5,7 @@ source ./utils/config.sh
 source ./utils/check.sh
 
 check "brew" || exit
-check "fish" || echo "Did you forget to run ./fish.sh first?" ; exit
-check "omf" || echo "Did you forget to run ./fish.sh first?" ; exit
+check "fish" || (echo "Did you forget to run ./fish.sh first?" ; exit)
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     confirm "Are you sure you want to uninstall Nvm?" || exit
