@@ -13,7 +13,7 @@ For each script, there's a `--remove` option to uninstall that feature
 ./vim.sh
 ./fish.sh
 ./nvm.sh
-./vscode.sh
+./iterm.sh
 ```
 
 ## Also useful

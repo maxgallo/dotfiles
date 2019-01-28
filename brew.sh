@@ -26,7 +26,6 @@ brew_cask_packages=(
     firefox-nightly
 
     # More
-    iterm2 # better terminal
     drawio # Macosx desktop client
     macdown # Markdown client
     visual-studio-code
