@@ -1,0 +1,37 @@
+{
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true
+    },
+    "profiles": [
+        {
+            "name": "Default Profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "home"
+                    }
+
+                },
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": {
+                        "key_code": "escape"
+                    }
+
+                }
+            ],
+            "virtual_hid_keyboard": {
+                "keyboard_type": "ansi",
+                "caps_lock_delay_milliseconds": 0
+            },
+            "devices": []
+        }
+    ]
+}

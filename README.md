@@ -10,17 +10,19 @@ You can both install and uninstall each single thing.
 
 ## Available Scripts
 ```bash
-./macos.sh  # Set all macOS defaults
-./brew.sh   # Applications and scripts
-./git.sh    # GIT setup & aliases
-./tmux.sh   # tmux & aliases
-./vim.sh    # VIM with all plugins
-./fish.sh   # Fish shell
-./bash.sh   # Minimum Bash setup
-./nvm.sh    # Nvm with multiple Node installed
-./iterm.sh  # iTerm2 with custom profiles
+./macos.sh      # Set all macOS defaults
+./brew.sh       # Applications and scripts
+./git.sh        # GIT setup & aliases
+./tmux.sh       # tmux & aliases
+./vim.sh        # VIM with all plugins
+./fish.sh       # Fish shell
+./bash.sh       # Minimum Bash setup
+./nvm.sh        # Nvm with multiple Node installed
+./iterm.sh      # iTerm2 with custom profiles
+./karabiner.sh  # Keys Remap using Karabiner
 
 cd more
+
 ./awscli
 ./shuttle
 ```
