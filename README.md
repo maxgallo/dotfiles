@@ -31,3 +31,4 @@ cd more
 - Project that made me start: https://github.com/bdougherty/dotfiles
 - Article about improvements: https://remysharp.com/2018/08/23/cli-improved
 - Huge dotfiles collection: https://github.com/mathiasbynens/dotfiles
+- Where i copied Karabiner stuff: https://github.com/rkalis/dotfiles
