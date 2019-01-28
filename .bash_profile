@@ -3,7 +3,6 @@ alias sourcekitsad='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias refresh_bash_profile='source ~/.bash_profile'
 alias clear='printf "\033c"'
 alias edbash='sublime ~.bash_profile'
-alias chrome='chrome --disable-web-security --user-data-dir=~/chrome/cache'
 
 export LC_ALL="en_US.UTF-8"
 export CLICOLOR=1

@@ -15,7 +15,7 @@ alias server "python -m SimpleHTTPServer"
 alias sslserver "python ~/scripts/sslserver.py"
 alias ll "ls -al"
 alias nodefolder "echo (nvm which latest)"
-alias chrome "chrome --disable-web-security --user-data-dir=~/chrome/cache"
+alias chrome "alias chrome "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security --user-data-dir=/Users/$whoami/chrome/cache""
 
 # set -g fish_term24bit 1
 # fish related commands
