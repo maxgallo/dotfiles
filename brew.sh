@@ -36,6 +36,7 @@ brew_cask_packages=(
     notion
     docker
     dropbox
+    1password
 
     # Quick look plugins (https://github.com/sindresorhus/quick-look-plugins)
     qlcolorcode
