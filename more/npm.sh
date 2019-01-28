@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Need Review before run!"
+exit
 # eslint and stylelint
 npm i -g eslint babel-eslint eslint-plugin-react stylelint stylelint-config-standard
 # typescript

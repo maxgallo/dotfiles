@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "Need Review before run!"
+exit
+
 VIM_BUNDLE_FOLDER=~/.vim/bundle
 
 

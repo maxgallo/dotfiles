@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source ./utils/confirm.sh
 source ./utils/config.sh
 source ./utils/check.sh

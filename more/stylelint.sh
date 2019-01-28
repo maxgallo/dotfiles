@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Need Review before run!"
+exit
+
 # load variables
 . ./var.sh
 

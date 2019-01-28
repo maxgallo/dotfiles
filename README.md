@@ -1,10 +1,14 @@
 # Max's dotfiles
 My personal collection of dotfiles.
 
-## Info
-For each script, there's a `--remove` option to uninstall that feature
+## How it works ?
+There are 8 fundamental scrips and then a bunch more inside the `more` folder.
+You can both install and uninstall each single thing.
 
-## Order of installation
+**Install** `./script.sh`
+**Uninstall** `./script.sh --remove`
+
+## Available Scripts
 ```bash
 ./macos.sh
 ./brew.sh
@@ -14,10 +18,11 @@ For each script, there's a `--remove` option to uninstall that feature
 ./fish.sh
 ./nvm.sh
 ./iterm.sh
-```
 
-## Also useful
-iTerm2 color scheme: https://github.com/mhartington/oceanic-next-iterm
+cd more
+./awscli
+./shuttle
+```
 
 ## Thanks to
 - Project that made me start: https://github.com/bdougherty/dotfiles
