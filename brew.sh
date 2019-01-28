@@ -42,6 +42,9 @@ brew_cask_packages=(
     qlstephen
     qlmarkdown
     quicklook-json
+
+    #More
+    tidal
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
