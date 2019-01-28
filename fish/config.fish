@@ -1,13 +1,3 @@
-# Path to Oh My Fish install.
-set -gx OMF_PATH "/Users/"$USER"/.local/share/omf"
-
-# Customize Oh My Fish configuration path.
-#set -gx OMF_CONFIG "/Users/max.gallo/.config/omf"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# my stuff - START
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # ALIASES
 
 # ALIASES - fish related
@@ -59,12 +49,3 @@ alias edvim "vim ~/.vimrc"
 
 # Vi bindings
 fish_vi_key_bindings
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# my stuff - END
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-# Load oh-my-fish configuration.
-source $OMF_PATH/init.fish
