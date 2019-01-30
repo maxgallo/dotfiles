@@ -20,6 +20,7 @@ You can both install and uninstall each single thing.
 ./nvm.sh        # Nvm with multiple Node installed
 ./iterm.sh      # iTerm2 with custom profiles
 ./karabiner.sh  # Keys Remap using Karabiner
+./yarn.sh       # Install yarn global dependencies
 
 cd more
 
