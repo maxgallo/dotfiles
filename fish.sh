@@ -5,7 +5,7 @@ source ./utils/check.sh
 source ./utils/log.sh
 
 check "brew" || (echo "we need brew to do stuff :(" ; exit)
-check "pip3" || (exit "we need pip3!" ; exit)
+check "pip3" || (echo "we need pip3!" ; exit)
 
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
