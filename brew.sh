@@ -15,6 +15,8 @@ brew_packages=(
     ncdu # better du
     tldr # better man https://github.com/tldr-pages/tldr/
     noti # notification from terminal https://github.com/variadico/noti
+    terraform
+    nmap
 )
 
 brew_cask_packages=(

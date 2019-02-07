@@ -5,8 +5,8 @@ source ./utils/check.sh
 
 yarn_packages=(
     serverless
-    terraform
     prettier
+    nodemon    # automatically restart node application
 )
 
 check "yarn" || (echo "Yarn is not installed!" ; exit)
