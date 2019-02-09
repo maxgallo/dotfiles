@@ -6,7 +6,7 @@ source ./utils/config.sh
 check "brew" || exit
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
-    confirm "Are you sure you want to uninstall Nvm?" || exit
+    confirm "Are you sure you want to uninstall Karabiner?" || exit
 
     logStep "Uninstalling Karabiner"
     brew cask uninstall karabiner-elements

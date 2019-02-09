@@ -24,8 +24,8 @@ You can both install and uninstall each single thing.
 
 cd more
 
-./awscli
-./shuttle
+./awscli.sh
+./shuttle.sh
 ```
 
 ## Thanks to
