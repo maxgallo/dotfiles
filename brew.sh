@@ -47,6 +47,7 @@ brew_cask_packages=(
 
     #More
     tidal
+    cyberduck
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
