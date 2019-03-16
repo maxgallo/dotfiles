@@ -21,9 +21,6 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
 
-    echo "Uninstalling Powerline Status"
-    pip3 uninstall -y powerline-status
-
     exit
 fi
 
@@ -80,6 +77,7 @@ git clone git://github.com/jiangmiao/auto-pairs.git # autoinsert brakets
 git clone https://github.com/roryokane/detectindent.git # enables :DetectIndent
 git clone https://github.com/prettier/vim-prettier # :Prettier
 git clone https://github.com/hashivim/vim-terraform.git
+git clone https://github.com/vim-airline/vim-airline
 
 # Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
@@ -89,7 +87,3 @@ git clone https://github.com/hail2u/vim-css3-syntax.git
 
 git clone git://github.com/tpope/vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
-
-# Install powerline
-logStep "Installing Powerline Status"
-pip3 install powerline-status

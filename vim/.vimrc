@@ -92,13 +92,17 @@ syntax on
     let b:ale_linters_explicit = 1
 
     let b:ale_fixers = ['prettier']
-    let g:ale_fix_on_save = 1
+    let g:ale_fix_on_save = 0
 
     let g:ale_open_list = 1
     let g:ale_keep_list_window_open = 0
     let g:ale_list_window_size = 5
 
- " CSS3 Syntax
+   " close list when closing buffer
+   " https://github.com/w0rp/ale/issues/1306
+    autocmd QuitPre * if empty(&bt) | lclose | endif
+
+" CSS3 Syntax
     augroup VimCSS3Syntax
         autocmd!
 
@@ -128,11 +132,18 @@ syntax on
     let g:ycm_filepath_blacklist = {
       \}
 
-    "Smart GoTo
-    nnoremap gt :YcmCompleter GoTo<CR>
+    "Smart GoTo it overrides tab navigation!
+    " nnoremap gt :YcmCompleter GoTo<CR>
 
 " Remove Trailing spaces on save
     autocmd BufWritePre <buffer> %s/\s\+$//e
+
+" Vim Airline
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Other command
     " Use 'gb' lie Ctrl-o to go back after a navigation
