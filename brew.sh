@@ -17,6 +17,7 @@ brew_packages=(
     noti # notification from terminal https://github.com/variadico/noti
     terraform
     nmap
+    hub # command-line tool that makes git easier to use with GitHub
 )
 
 brew_cask_packages=(
