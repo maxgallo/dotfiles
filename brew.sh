@@ -26,6 +26,7 @@ brew_cask_packages=(
     firefox
     firefox-developer-edition
     firefox-nightly
+    opera
 
     # More
     drawio # Macosx desktop client
