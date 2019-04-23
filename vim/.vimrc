@@ -56,9 +56,19 @@ syntax on
 
     let g:ackprg = 'ag --nogroup --nocolor --column'
 
+
 " Colours
     set background=dark
     colorscheme OceanicNext
+
+" Live Coding: enable following lines for live coding
+    " set background=light
+    " colorscheme PaperColor
+
+" Cursor Line
+    set cursorline
+    hi CursorLine gui=none
+    hi CursorLine cterm=none
 
 " vim-jsx
     let g:jsx_ext_required = 0 " no mandatory .jsx for files
@@ -133,7 +143,8 @@ syntax on
       \}
 
     "Smart GoTo it overrides tab navigation!
-    " nnoremap gt :YcmCompleter GoTo<CR>
+    nnoremap <C-]> :YcmCompleter GoTo<CR>
+    "nnoremap <C-[> :tab split \| YcmCompleter GoToDefinition<CR>
 
 " Remove Trailing spaces on save
     autocmd BufWritePre <buffer> %s/\s\+$//e
