@@ -106,18 +106,18 @@ endif
 
 " Ale
     let b:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
-    let b:ale_linters_explicit = 1
+    let b:ale_linters_explicit = 1 " Only run linters I specified
 
-    let b:ale_fixers = ['prettier']
-    let g:ale_fix_on_save = 0
+    let g:ale_fixers = { 'javascript': ['prettier']}
+    let g:ale_fix_on_save = 0 " don't run prettier on save
+    let g:ale_javascript_prettier_use_local_config = 1
 
     let g:ale_open_list = 1
-    let g:ale_keep_list_window_open = 0
     let g:ale_list_window_size = 5
 
    " close list when closing buffer
    " https://github.com/w0rp/ale/issues/1306
-    autocmd QuitPre * if empty(&bt) | lclose | endif
+   autocmd QuitPre * if empty(&bt) | lclose | endif
 
 " CSS3 Syntax
     augroup VimCSS3Syntax
