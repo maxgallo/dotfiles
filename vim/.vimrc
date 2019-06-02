@@ -28,7 +28,7 @@ syntax on
     set backspace=indent,eol,start
 
 " NERDTree configuration
-    autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+    autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
 
 " NERDCommenter
     let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
@@ -100,6 +100,10 @@ endif
     nnoremap <silent> <Tab><Down> :wincmd j<CR>
     nnoremap <silent> <Tab><Left> :wincmd h<CR>
     nnoremap <silent> <Tab><Right> :wincmd l<CR>
+    nnoremap <silent> <Tab>k :wincmd k<CR>
+    nnoremap <silent> <Tab>j :wincmd j<CR>
+    nnoremap <silent> <Tab>h :wincmd h<CR>
+    nnoremap <silent> <Tab>l :wincmd l<CR>
 
 " Vim + Ctags Ctrlp
     nnoremap <leader>. :CtrlPTag<cr>
