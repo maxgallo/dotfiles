@@ -16,6 +16,7 @@ alias cat "bat"
 alias ping "prettyping --nolegend"
 alias du2 "ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help "tldr"
+alias vimlight "vim --cmd 'let LIVE_CODING=1'"
 
 # set -g fish_term24bit 1
 # fish related commands

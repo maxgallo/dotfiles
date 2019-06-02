@@ -56,14 +56,21 @@ syntax on
 
     let g:ackprg = 'ag --nogroup --nocolor --column'
 
+if exists('LIVE_CODING')
+    " 'LIVE_CODING' passed from ~/.config/fish/config.fish 'vimlight' alias
+    " 'vimlight' is an alias for: vim --cmd 'let LIVE_CODING=1'
+    set background=light
+    colorscheme PaperColor
 
-" Colours
+    autocmd VimEnter * GitGutterDisable " disable git icons
+    autocmd VimEnter * ALEDisable       " disable syntax check
+    autocmd VimEnter * NERDTreeClose    " close NERDTree
+    autocmd VimEnter * set laststatus=0 " remove Vim Airplane
+else
+    " Colours
     set background=dark
     colorscheme OceanicNext
-
-" Live Coding: enable following lines for live coding
-    " set background=light
-    " colorscheme PaperColor
+endif
 
 " Cursor Line
     set cursorline
