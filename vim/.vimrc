@@ -60,7 +60,11 @@ if exists('LIVE_CODING')
     " 'LIVE_CODING' passed from ~/.config/fish/config.fish 'vimlight' alias
     " 'vimlight' is an alias for: vim --cmd 'let LIVE_CODING=1'
     set background=light
+    " colorscheme pencil
     colorscheme PaperColor
+    " let s:dark_blue = { "gui": "#008EC4", "cterm": "4"   }
+    " call s:h("Function",    {"fg": s:dark_blue})
+    hi! link Function Identifier
 
     autocmd VimEnter * GitGutterDisable " disable git icons
     autocmd VimEnter * ALEDisable       " disable syntax check
