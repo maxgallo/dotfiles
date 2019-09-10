@@ -113,12 +113,13 @@ endif
     nnoremap <leader>. :CtrlPTag<cr>
 
 " Ale
-    let b:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
+    "let b:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
+    let b:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tsserver']}
     let b:ale_linters_explicit = 1 " Only run linters I specified
 
-    let g:ale_fixers = { 'javascript': ['prettier']}
-    let g:ale_fix_on_save = 0 " don't run prettier on save
-    let g:ale_javascript_prettier_use_local_config = 1
+    " let g:ale_fixers = { 'javascript': ['prettier']}
+    " let g:ale_fix_on_save = 0 " don't run prettier on save
+    " let g:ale_javascript_prettier_use_local_config = 1
 
     let g:ale_open_list = 1
     let g:ale_list_window_size = 5
@@ -138,10 +139,10 @@ endif
     set completeopt=menu
 
 " TypeSCript
-    "autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-    "autocmd BufEnter *.tsx set filetype=typescript
-    "autocmd BufEnter *.tsx set filetype=javascript.jsx
-    "
+    " autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+    " autocmd BufEnter *.tsx set filetype=typescript
+    " autocmd BufEnter *.tsx set filetype=javascript.jsx
+
 " Tries to fixes bash completition
     set isfname-==
 
@@ -156,6 +157,12 @@ endif
     " Don't ask me why but jsx files are disabled by default
     let g:ycm_filepath_blacklist = {
       \}
+
+    " Suggest me things after 2 chars
+    let g:ycm_semantic_triggers = {
+    \   'javascript': [ 're!\w{2}' ],
+    \   'typescript': [ 're!\w{2}' ]
+    \ }
 
     "Smart GoTo it overrides tab navigation!
     nnoremap <C-]> :YcmCompleter GoTo<CR>

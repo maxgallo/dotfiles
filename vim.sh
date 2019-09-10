@@ -78,6 +78,7 @@ git clone https://github.com/roryokane/detectindent.git # enables :DetectIndent
 git clone https://github.com/prettier/vim-prettier # :Prettier
 git clone https://github.com/hashivim/vim-terraform.git
 git clone https://github.com/vim-airline/vim-airline
+git clone https://github.com/leafgarland/typescript-vim.git
 
 # Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
