@@ -1,6 +1,7 @@
 {
     "Profiles": [
         {
+            "Show Status Bar" : false,
             "Ansi 5 Color" : {
                 "Red Component" : 0.71825045347213745,
                 "Color Space" : "Calibrated",
