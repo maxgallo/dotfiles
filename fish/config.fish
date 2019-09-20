@@ -45,6 +45,11 @@ end
 # NVM
 set -gx NVM_DIR ~/.nvm
 
+# Source chtf
+if test -f /usr/local/share/chtf/chtf.fish
+    source /usr/local/share/chtf/chtf.fish
+end
+
 # Vim related
 alias edvim "vim ~/.vimrc"
 

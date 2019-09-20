@@ -15,9 +15,10 @@ brew_packages=(
     ncdu # better du
     tldr # better man https://github.com/tldr-pages/tldr/
     noti # notification from terminal https://github.com/variadico/noti
-    terraform
     nmap
     hub # command-line tool that makes git easier to use with GitHub
+    chtf # change terraform version
+    terraform
 )
 
 brew_cask_packages=(
@@ -87,6 +88,7 @@ fi
 
 brew tap caskroom/cask
 brew tap homebrew/cask-versions
+brew tap Yleisradio/terraforms
 brew doctor
 brew update
 
