@@ -17,7 +17,7 @@ brew_packages=(
     noti # notification from terminal https://github.com/variadico/noti
     nmap
     hub # command-line tool that makes git easier to use with GitHub
-    chtf # change terraform version
+    tfenv # multiple terraform versions
     terraform
 )
 
