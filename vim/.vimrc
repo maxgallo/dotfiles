@@ -3,6 +3,9 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
+" Use bash as shell (without this one it uses fish and fugitive is crazy slow)
+    set shell=/bin/bash
+
 " General
     set timeoutlen=1000 ttimeoutlen=0 " Eliminate the delays on ESC
     set number                        " Show line number
