@@ -31,7 +31,9 @@ syntax on
     set backspace=indent,eol,start
 
 " NERDTree configuration
-    autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
+    " `wincmd p` will move the focus on the main window, not on nerdtree
+    " !=# means case-sensitive
+    autocmd VimEnter * if &filetype !=# 'pullrequest' && &filetype != 'gitcommit' | NERDTree | wincmd p | endif
 
 " NERDCommenter
     let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
