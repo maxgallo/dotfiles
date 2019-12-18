@@ -118,9 +118,10 @@ endif
     nnoremap <leader>. :CtrlPTag<cr>
 
 " Ale
-    "let b:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
-    let b:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tsserver']}
-    let b:ale_linters_explicit = 1 " Only run linters I specified
+    "let g:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
+    let g:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tsserver']}
+    " let g:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tslint']}
+    let g:ale_linters_explicit = 1 " Only run linters I specified
 
     " let g:ale_fixers = { 'javascript': ['prettier']}
     " let g:ale_fix_on_save = 0 " don't run prettier on save
