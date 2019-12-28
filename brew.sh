@@ -52,6 +52,7 @@ brew_cask_packages=(
     tidal
     cyberduck
     deckset
+    rectangle # move and resize windows
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
