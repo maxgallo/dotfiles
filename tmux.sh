@@ -14,6 +14,9 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "Removing ~/.tmux.conf file"
     rm ~/.tmux.conf
 
+    echo "Removing anything related to tmux"
+    rm -rf ~/.tmux/
+
     exit
 fi
 
