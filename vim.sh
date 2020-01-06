@@ -55,7 +55,7 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 (
 cd YouCompleteMe || exit
 git submodule update --init --recursive
-./install.py --clang-completer
+python3 ./install.py --clang-completer --ts-completer
 )
 
 # Color scheme
