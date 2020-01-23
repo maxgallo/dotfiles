@@ -34,6 +34,7 @@ syntax on
     " `wincmd p` will move the focus on the main window, not on nerdtree
     " !=# means case-sensitive
     autocmd VimEnter * if &filetype !=# 'pullrequest' && &filetype != 'gitcommit' | NERDTree | wincmd p | endif
+    let NERDTreeIgnore=['\.git', '\.DS_Store', 'node_modules']
 
 " NERDCommenter
     let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
