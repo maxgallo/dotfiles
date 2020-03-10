@@ -20,6 +20,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
+    rm ~/.vim/coc-setttings.json
 
     exit
 fi
@@ -45,19 +46,6 @@ logStep "Installing Silver Searcher"
 brew install the_silver_searcher
 git clone https://github.com/rking/ag.vim $pathogen_path/ag
 
-# You Complete Me & TSServer - autocomplete
-logStep "Installing You Complete Me & TSServer"
-
-npm install -g typescript
-
-brew install cmake
-git clone https://github.com/Valloric/YouCompleteMe.git
-(
-cd YouCompleteMe || exit
-git submodule update --init --recursive
-python3 ./install.py --clang-completer --ts-completer
-)
-
 # Color scheme
 logStep "Installing Color Scheme"
 git clone https://github.com/flazz/vim-colorschemes.git colorschemes
@@ -80,9 +68,6 @@ git clone https://github.com/hashivim/vim-terraform.git
 git clone https://github.com/vim-airline/vim-airline
 git clone https://github.com/leafgarland/typescript-vim.git
 
-# Asynchronous linting engine, aka ALE
-git clone https://github.com/w0rp/ale
-
 # FZF support for vim
 git clone git@github.com:junegunn/fzf.vim.git
 git clone https://github.com/junegunn/fzf
@@ -90,5 +75,14 @@ git clone https://github.com/junegunn/fzf
 # CSSNext support
 git clone https://github.com/hail2u/vim-css3-syntax.git
 
+# Conquer of Completition - aka COC (Autocompletion / intellisense)
+npm install -g typescript
+git clone -b release https://github.com/neoclide/coc.nvim
+ln -s "$dotfiles_folder/vim/coc-setttings.json" ~/.vim/coc-settings.json
+
+# diagnostic is displayed by ALE
+git clone https://github.com/dense-analysis/ale.git
+
 git clone git://github.com/tpope/vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
+

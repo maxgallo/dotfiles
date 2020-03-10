@@ -10,6 +10,10 @@ syntax on
     set timeoutlen=1000 ttimeoutlen=0 " Eliminate the delays on ESC
     set number                        " Show line number
 
+    " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+    " delays and poor user experience.
+    set updatetime=300
+
 " Powerline
     set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
     set laststatus=2
@@ -89,6 +93,10 @@ else
     " Colours
     set background=dark
     colorscheme OceanicNext
+
+    " Always show the signcolumn, otherwise it would shift the text each time
+    " diagnostics appear/become resolved.
+    set signcolumn=yes
 endif
 
 " Cursor Line
@@ -128,21 +136,8 @@ endif
     nnoremap <leader>. :CtrlPTag<cr>
 
 " Ale
-    "let g:ale_linters = ['stylelint', 'eslint'] " This avoid automatic detection of typescript
-    let g:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tsserver']}
-    " let g:ale_linters = {'javascript': ['eslint'], 'css': ['stylelint'], 'typescript': ['tslint']}
-    let g:ale_linters_explicit = 1 " Only run linters I specified
-
-    " let g:ale_fixers = { 'javascript': ['prettier']}
-    " let g:ale_fix_on_save = 0 " don't run prettier on save
-    " let g:ale_javascript_prettier_use_local_config = 1
-
     let g:ale_open_list = 1
     let g:ale_list_window_size = 5
-
-   " close list when closing buffer
-   " https://github.com/w0rp/ale/issues/1306
-   autocmd QuitPre * if empty(&bt) | lclose | endif
 
 " CSS3 Syntax
     augroup VimCSS3Syntax
@@ -155,34 +150,12 @@ endif
     set completeopt=menu
 
 " TypeSCript
-    " autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-    " autocmd BufEnter *.tsx set filetype=typescript
-    " autocmd BufEnter *.tsx set filetype=javascript.jsx
+    autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+    autocmd BufEnter *.tsx set filetype=typescript
+    autocmd BufEnter *.tsx set filetype=javascript.jsx
 
 " Tries to fixes bash completition
     set isfname-==
-
-" You Complete Me
-    let g:ycm_complete_in_comments = 1
-    let g:ycm_complete_in_strings = 1
-    let g:ycm_collect_identifiers_from_comments_and_strings = 1
-    " This was checkin for errors same way ALE already is doing, and I want to
-    " use Ale for this
-    let g:ycm_show_diagnostics_ui = 0
-
-    " Don't ask me why but jsx files are disabled by default
-    let g:ycm_filepath_blacklist = {
-      \}
-
-    " Suggest me things after 2 chars
-    let g:ycm_semantic_triggers = {
-    \   'javascript': [ 're!\w{2}' ],
-    \   'typescript': [ 're!\w{2}' ]
-    \ }
-
-    "Smart GoTo it overrides tab navigation!
-    nnoremap <C-]> :YcmCompleter GoTo<CR>
-    "nnoremap <C-[> :tab split \| YcmCompleter GoToDefinition<CR>
 
 " Remove Trailing spaces on save
     autocmd BufWritePre <buffer> %s/\s\+$//e
@@ -197,3 +170,43 @@ endif
 " Other command
     " Use 'gb' lie Ctrl-o to go back after a navigation
     nnoremap <silent> gb <C-o>
+
+
+" COC, Conquer of Completition
+    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+
+    " Use tab for trigger completion with characters ahead and navigate.
+    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+    " other plugin before putting this into your config.
+    inoremap <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    " GoTo code navigation.
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    " Use K to show documentation in preview window.
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+    function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+    endfunction
+
+    " Use `[g` and `]g` to navigate diagnostics
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
