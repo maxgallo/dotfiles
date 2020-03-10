@@ -62,6 +62,15 @@ syntax on
 
     let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" FZF
+let g:fzf_command_prefix = 'Fzf'
+" command! -bang -nargs=* Agg
+  " \ call fzf#vim#ag(<q-args>,
+  " \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  " \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  " \                 <bang>0)
+
+
 if exists('LIVE_CODING')
     " 'LIVE_CODING' passed from ~/.config/fish/config.fish 'vimlight' alias
     " 'vimlight' is an alias for: vim --cmd 'let LIVE_CODING=1'

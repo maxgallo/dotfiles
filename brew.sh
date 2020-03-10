@@ -19,6 +19,7 @@ brew_packages=(
     hub # command-line tool that makes git easier to use with GitHub
     tfenv # multiple terraform versions
     terraform
+    fzf # command-line finder
 )
 
 brew_cask_packages=(

@@ -83,6 +83,10 @@ git clone https://github.com/leafgarland/typescript-vim.git
 # Asynchronous linting engine, aka ALE
 git clone https://github.com/w0rp/ale
 
+# FZF support for vim
+git clone git@github.com:junegunn/fzf.vim.git
+git clone https://github.com/junegunn/fzf
+
 # CSSNext support
 git clone https://github.com/hail2u/vim-css3-syntax.git
 
