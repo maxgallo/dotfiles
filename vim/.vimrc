@@ -1,7 +1,51 @@
-" Enable Pathogen
-execute pathogen#infect()
-filetype plugin indent on
-syntax on
+" vim-bundle
+
+    " Install vim-plug if not available (https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+    " Plugin Begin
+    call plug#begin('~/.vim/plugged')
+
+    " Search
+    Plug 'rking/ag.vim'               " Silver Searcher
+    Plug 'kien/ctrlp.vim'
+    Plug 'junegunn/fzf', { 'do': './install --bin' }
+    Plug 'junegunn/fzf.vim'
+
+    " Edit
+    Plug 'terryma/vim-multiple-cursors'  " Edit multiple lines in one go
+    Plug 'tpope/vim-surround'            " Add, delete or change surrounding parentheses in pairs
+    Plug 'jiangmiao/auto-pairs'          " Add parentheses automatically
+    Plug 'roryokane/detectindent'        " enables :DetectIndent
+    Plug 'preservim/nerdcommenter'
+
+    " UI & Windows
+    Plug 'vim-airline/vim-airline'
+    Plug 'scrooloose/nerdtree'
+    Plug 'flazz/vim-colorschemes'
+
+    " Language specific
+    Plug 'pangloss/vim-javascript'
+    Plug 'hashivim/vim-terraform'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'mxw/vim-jsx'
+    Plug 'prettier/vim-prettier' " format using :Prettier
+    Plug 'hail2u/vim-css3-syntax'
+
+    "Autocompletion & Syntax
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'dense-analysis/ale'
+
+    " Git
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+
+    call plug#end()
+    " Plugin End
 
 " Use bash as shell (without this one it uses fish and fugitive is crazy slow)
     set shell=/bin/bash
