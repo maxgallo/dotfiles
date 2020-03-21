@@ -27,5 +27,5 @@ logStep "Installing nvm for Oh My Fish"
 echo "omf uninstall nvm" | fish
 echo "omf install nvm" | fish
 
-logStep "Installing node 8.10"
-echo "nvm install 8.10" | fish
+logStep "Installing node 12.16"
+echo "nvm install 12.16" | fish
