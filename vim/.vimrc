@@ -26,6 +26,7 @@
     " UI & Windows
     Plug 'vim-airline/vim-airline'
     Plug 'scrooloose/nerdtree'
+    " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'flazz/vim-colorschemes'
 
     " Language specific
@@ -38,7 +39,7 @@
 
     "Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'dense-analysis/ale'
+    " Plug 'dense-analysis/ale'
 
     " Git
     Plug 'airblade/vim-gitgutter'
@@ -179,9 +180,13 @@ endif
 " Vim + Ctags Ctrlp
     nnoremap <leader>. :CtrlPTag<cr>
 
-" Ale
-    let g:ale_open_list = 1
-    let g:ale_list_window_size = 5
+" " Ale
+    " let g:ale_open_list = 1
+    " let g:ale_list_window_size = 5
+
+   " " close list when closing buffer
+   " " https://github.com/w0rp/ale/issues/1306
+   " autocmd QuitPre * if empty(&bt) | lclose | endif
 
 " CSS3 Syntax
     augroup VimCSS3Syntax
@@ -253,4 +258,23 @@ endif
     " Use `[g` and `]g` to navigate diagnostics
     nmap <silent> [g <Plug>(coc-diagnostic-prev)
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    " remove airline integration
+    let g:airline#extensions#coc#enabled = 0
+
+    " This set of things fixes coc-definiti froze
+    set hidden
+    set nobackup
+    set nowritebackup
+    set shortmess+=c
+
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+
+
+
+
+
+
+
 

@@ -1,4 +1,3 @@
 {
-    "diagnostic.refreshOnInsertMode": true,
-    "diagnostic.displayByAle": true
+    "diagnostic.refreshOnInsertMode": true
 }
