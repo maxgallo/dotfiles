@@ -2,11 +2,8 @@
 My personal collection of dotfiles.
 
 ## How it works ?
-There are 8 fundamental scrips and then a bunch more inside the `more` folder.
-You can both install and uninstall each single thing.
-
-**Install** `./script.sh`
-**Uninstall** `./script.sh --remove`
+There are a few fundamental scripts and then a bunch more inside the `more` folder.
+Removing or adding functionalities atomically works better than a single `installeverything.sh` for me. It avoids broken states and isolate problems with scripts.
 
 ## Available Scripts
 ```bash
