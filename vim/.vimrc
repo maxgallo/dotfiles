@@ -1,4 +1,4 @@
-" vim-bundle
+" vim-plug
 
     " Install vim-plug if not available (https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation)
     if empty(glob('~/.vim/autoload/plug.vim'))
@@ -7,6 +7,8 @@
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
 
+    " https://github.com/junegunn/vim-plug
+    "
     " Plugin Begin
     call plug#begin('~/.vim/plugged')
 
@@ -36,13 +38,13 @@
     Plug 'mxw/vim-jsx'
     Plug 'prettier/vim-prettier' " format using :Prettier
     Plug 'hail2u/vim-css3-syntax'
+    Plug 'heavenshell/vim-jsdoc'
 
     "Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plug 'dense-analysis/ale'
 
     " Git
-    Plug 'airblade/vim-gitgutter'
+    " Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
 
     call plug#end()
@@ -83,7 +85,7 @@
     " `wincmd p` will move the focus on the main window, not on nerdtree
     " !=# means case-sensitive
     autocmd VimEnter * if &filetype !=# 'pullrequest' && &filetype != 'gitcommit' | NERDTree | wincmd p | endif
-    let NERDTreeIgnore=['\.git', '\.DS_Store', 'node_modules']
+    let NERDTreeIgnore=['\.git$', '\.DS_Store']
 
 " NERDCommenter
     let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
@@ -180,14 +182,6 @@ endif
 " Vim + Ctags Ctrlp
     nnoremap <leader>. :CtrlPTag<cr>
 
-" " Ale
-    " let g:ale_open_list = 1
-    " let g:ale_list_window_size = 5
-
-   " " close list when closing buffer
-   " " https://github.com/w0rp/ale/issues/1306
-   " autocmd QuitPre * if empty(&bt) | lclose | endif
-
 " CSS3 Syntax
     augroup VimCSS3Syntax
         autocmd!
@@ -222,7 +216,9 @@ endif
 
 
 " COC, Conquer of Completition
-    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-git']
+    " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+    " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
 
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

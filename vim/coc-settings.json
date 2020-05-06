@@ -1,3 +1,18 @@
 {
-    "diagnostic.refreshOnInsertMode": true
+    "codeLens.enable": true,
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.refreshOnInsertMode": true,
+    "diagnostic.signOffset": 9999999,
+    "eslint.enable": true,
+    "eslint.filetypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "git.realtimeGutters": true,
+    "git.enableGutters": false,
+    "tsserver.enableJavascript": true
 }
