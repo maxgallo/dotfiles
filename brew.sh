@@ -20,6 +20,7 @@ brew_packages=(
     tfenv # multiple terraform versions
     terraform
     fzf # command-line finder
+    github-markdown-toc # create table of content in markdown files
 )
 
 brew_cask_packages=(
