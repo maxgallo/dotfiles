@@ -56,9 +56,10 @@ if [[ ! "$(type -P omf)" ]]; then
 fi
 
 logStep "Symlinking config.fish file"
-rm ~/.config/fish/config.fish
+rm ~/.config/fish/config.fish 2> /dev/null
 ln -s "$dotfiles_folder/fish/config.fish" ~/.config/fish/config.fish
 
 logStep "Symlinking functions"
-rm -rf ~/.config/fish/functions
+rm -rf ~/.config/fish/functions 2> /dev/null
+mkdir -p ~/.config/fish/functions/
 ln -s $dotfiles_folder/fish/functions/ ~/.config/fish/functions/
