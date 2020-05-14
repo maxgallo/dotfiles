@@ -39,6 +39,7 @@
     Plug 'prettier/vim-prettier' " format using :Prettier
     Plug 'hail2u/vim-css3-syntax'
     Plug 'heavenshell/vim-jsdoc'
+    Plug 'posva/vim-vue'
 
     "Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -50,21 +51,21 @@
     call plug#end()
     " Plugin End
 
-" Use bash as shell (without this one it uses fish and fugitive is crazy slow)
-    set shell=/bin/bash
 
 " General
     set timeoutlen=1000 ttimeoutlen=0 " Eliminate the delays on ESC
     set number                        " Show line number
 
+    set laststatus=2
+    set t_Co=256
+
     " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
     " delays and poor user experience.
     set updatetime=300
 
-" Powerline
-    set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
-    set laststatus=2
-    set t_Co=256
+    " Use bash as shell (without this one it uses fish and fugitive is crazy slow)
+    set shell=/bin/bash
+
 
 " Text Formatting
     set autoindent
@@ -163,8 +164,9 @@ endif
     nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
     " Resize horizontal view splits with
-    nnoremap <silent> ] :vertical resize +10<CR>
-    nnoremap <silent> [ :vertical resize -10<CR>
+    " commented out since they conflicts with [c ]c in diff
+    " nnoremap <silent> ] :vertical resize +10<CR>
+    " nnoremap <silent> [ :vertical resize -10<CR>
 
     "Cycle to views with double tab
     nnoremap <silent> <Tab><Tab> <C-w>w
@@ -210,13 +212,8 @@ endif
     let g:airline#extensions#tabline#left_alt_sep = '|'
     let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Other command
-    " Use 'gb' lie Ctrl-o to go back after a navigation
-    nnoremap <silent> gb <C-o>
-
-
 " COC, Conquer of Completition
-    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-git']
+    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-git', 'coc-vetur']
     " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
     " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
 
@@ -263,14 +260,3 @@ endif
     set nobackup
     set nowritebackup
     set shortmess+=c
-
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
-
-
-
-
-
-
-
