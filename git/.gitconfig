@@ -9,7 +9,7 @@
     unstage = reset HEAD
     uncommit = reset HEAD^
     branch-name = "!git rev-parse --abbrev-ref HEAD"
-    publish = "!git push --set-upstream origin $(git branch-name)"
+    ppush = "!git push --set-upstream origin $(git branch-name)"
 
 [core]
     editor = vim
