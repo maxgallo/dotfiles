@@ -43,6 +43,7 @@ brew_cask_packages=(
     docker
     dropbox
     1password
+    postman
 
     # Quick look plugins (https://github.com/sindresorhus/quick-look-plugins)
     qlcolorcode
@@ -50,10 +51,13 @@ brew_cask_packages=(
     qlmarkdown
     quicklook-json
 
-    #More
+    # Design
+    deckset
+    sketch
+
+    # More
     tidal
     cyberduck
-    deckset
     rectangle # move and resize windows
 )
 
@@ -86,10 +90,10 @@ fi
 # Make sure homebrew is installed first
 if [[ ! "$(type -P brew)" ]]; then
     echo "Installing Homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-brew tap caskroom/cask
+brew tap homebrew/cask
 brew tap homebrew/cask-versions
 brew tap Yleisradio/terraforms
 brew doctor
