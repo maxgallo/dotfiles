@@ -43,9 +43,9 @@ set fish_pager_color_prefix C594C5      # suggestion prefix
 set fish_pager_color_completion 6699CC # suggestion completition
 set fish_color_redirection yellow
 
-function fish_prompt
-    powerline-shell --shell bare $status
-end
+# function fish_prompt
+    # powerline-shell --shell bare $status
+# end
 
 # NVM
 set -gx NVM_DIR ~/.nvm
