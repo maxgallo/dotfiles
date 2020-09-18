@@ -89,6 +89,7 @@ echo "Configuring Bluetooth"
 # Enable Bluetooth AptX codec
 sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
 
+
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
@@ -111,6 +112,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Volume.menu" \
     "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
     "/System/Library/CoreServices/Menu Extras/Battery.menu"
+    "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
 
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -bool true
 
