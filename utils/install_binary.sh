@@ -8,15 +8,15 @@ function get_download_url {
 }
 
 function install_binary {
-    URL=$(get_download_url $1 $2)
+    local URL=$(get_download_url $1 $2)
     mkdir -p ~/bin
-    BASE=$(basename $URL)
+    local BASE=$(basename $URL)
     wget -q -nv -O $BASE $URL
     if [ ! -f $BASE ]; then
         echo "Didn't download $URL properly.  Where is $BASE?"
         exit 1
     fi
-    DESTINATION=~/bin/$3
+    local DESTINATION=~/bin/$3
     mv $BASE $DESTINATION
     chmod +x $DESTINATION
     echo "🎉 New binary available at $DESTINATION"
