@@ -1,5 +1,6 @@
 #!/bin/bash
 source ./utils/confirm.sh
+source ./utils/brew-utils.sh
 
 brew_packages=(
     vim
@@ -18,51 +19,12 @@ brew_packages=(
     nmap
     hub # command-line tool that makes git easier to use with GitHub
     tfenv # multiple terraform versions
-    # terraform
     fzf # command-line finder
     github-markdown-toc # create table of content in markdown files
 )
 
-brew_cask_packages=(
-    # Browsers
-    google-chrome
-    google-chrome-canary
-    firefox
-    firefox-developer-edition
-    firefox-nightly
-    opera
-
-    # More
-    drawio # Macosx desktop client
-    macdown # Markdown client
-    visual-studio-code
-    slack
-    charles # Proxy
-    virtualbox
-    notion
-    docker
-    dropbox
-    1password
-    postman
-
-    # Quick look plugins (https://github.com/sindresorhus/quick-look-plugins)
-    qlcolorcode
-    qlstephen
-    qlmarkdown
-    quicklook-json
-
-    # Design
-    deckset
-    sketch
-
-    # More
-    tidal
-    cyberduck
-    rectangle # move and resize windows
-)
-
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
-    confirm "Are you sure you want to disinstall Brew and all the packages?" || exit
+    confirm "Are you sure you want to remove all Brew packages?" || exit
 
     for i in "${brew_packages[@]}"
     do
@@ -70,32 +32,16 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
         brew uninstall "$i"
     done
 
-    echo "Uninstalling Brew Cask packages"
+    confirm "Do you want to disinstall Brew itself ?" || exit
 
-    for i in "${brew_cask_packages[@]}"
-    do
-        :
-        brew cask uninstall "$i"
-    done
-
-    # If Brew exists, uninstalling it
-    if [[ "$(type -P brew)" ]]; then
-        echo "Uninstalling Brew"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
-    fi
+    uninstallBrew
 
     exit
 fi
 
 # Make sure homebrew is installed first
-if [[ ! "$(type -P brew)" ]]; then
-    echo "Installing Homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+mandatoryBrew
 
-brew tap homebrew/cask
-brew tap homebrew/cask-versions
-brew tap Yleisradio/terraforms
 brew doctor
 brew update
 
@@ -109,11 +55,3 @@ done
 
 # Post installation
 tfenv install # this will install latest package
-
-echo "Installing Cask packages"
-
-for i in "${brew_cask_packages[@]}"
-do
-   :
-   brew cask install "$i"
-done

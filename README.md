@@ -8,7 +8,8 @@ Removing or adding functionalities atomically works better than a single `instal
 ## Available Scripts
 ```bash
 ./macos.sh      # Set all macOS defaults
-./brew.sh       # Applications and scripts
+./brew.sh       # Install brew packages
+./brew-cask.sh  # Install macos applications
 ./git.sh        # GIT setup & aliases
 ./tmux.sh       # tmux & aliases
 ./vim.sh        # VIM with all plugins
