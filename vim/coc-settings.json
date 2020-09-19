@@ -12,6 +12,7 @@
         "typescript",
         "typescriptreact"
     ],
+    "eslint.nodePath": "/usr/local/lib/node_modules",
     "git.realtimeGutters": true,
     "git.enableGutters": false,
     "tsserver.enableJavascript": true

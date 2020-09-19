@@ -5,10 +5,12 @@ source ../utils/config.sh
 source ../utils/log.sh
 
 eslint_packages=(
+    typescript
     eslint
     babel-eslint
     eslint-plugin-react
     @typescript-eslint/parser
+    @typescript-eslint/eslint-plugin
 )
 
 # Remove if --remove variable is present
@@ -37,5 +39,6 @@ do
     npm install --global "$i"
 done
 
-logStep "Symlinking ~/.eslintrc file"
-ln -s "$dotfiles_folder/eslint/.eslintrc" ~/.eslintrc
+logStep "Symlinking ~/.eslintrc.json file"
+rm ~/.eslintrc
+ln -s "$dotfiles_folder/more/.eslintrc.json" ~/.eslintrc.json

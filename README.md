@@ -23,6 +23,7 @@ Removing or adding functionalities atomically works better than a single `instal
 
 cd more
 
+./eslint.sh
 ./awscli.sh
 ./shuttle.sh
 ```
