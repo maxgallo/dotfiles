@@ -21,6 +21,8 @@ brew_packages=(
     tfenv # multiple terraform versions
     fzf # command-line finder
     github-markdown-toc # create table of content in markdown files
+    wget
+    golang
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then

@@ -19,6 +19,7 @@ Removing or adding functionalities atomically works better than a single `instal
 ./iterm.sh      # iTerm2 with custom profiles
 ./karabiner.sh  # Keys Remap using Karabiner
 ./yarn.sh       # Install yarn global dependencies
+./powerline.sh  # Install powerline-go and use it in fish
 
 cd more
 
