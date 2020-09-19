@@ -18,7 +18,7 @@ brew_packages=(
     nmap
     hub # command-line tool that makes git easier to use with GitHub
     tfenv # multiple terraform versions
-    terraform
+    # terraform
     fzf # command-line finder
     github-markdown-toc # create table of content in markdown files
 )
@@ -106,6 +106,9 @@ do
    :
    brew install "$i"
 done
+
+# Post installation
+tfenv install # this will install latest package
 
 echo "Installing Cask packages"
 
