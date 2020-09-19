@@ -55,3 +55,8 @@ alias edvim "vim ~/.vimrc"
 
 # Vi bindings
 # fish_vi_key_bindings
+
+# FZF
+# More interesting things here
+# https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
+alias vif "vim -O (fzf --multi)"

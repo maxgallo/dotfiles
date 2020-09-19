@@ -14,8 +14,7 @@
 
     " Search
     Plug 'rking/ag.vim'               " Silver Searcher
-    Plug 'kien/ctrlp.vim'
-    Plug 'junegunn/fzf', { 'do': './install --bin' }
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
     " Edit
@@ -115,13 +114,30 @@
     let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " FZF
-let g:fzf_command_prefix = 'Fzf'
-" command! -bang -nargs=* Agg
-  " \ call fzf#vim#ag(<q-args>,
-  " \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  " \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  " \                 <bang>0)
+    let g:fzf_layout = { 'down': '~40%' } " make it stick to the bottom
+    " Customize fzf colors to match your color scheme
+    let g:fzf_colors =
+        \ { 'fg':      ['fg', 'Normal'],
+        \ 'bg':      ['bg', 'Normal'],
+        \ 'hl':      ['fg', 'Comment'],
+        \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+        \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+        \ 'hl+':     ['fg', 'Statement'],
+        \ 'info':    ['fg', 'PreProc'],
+        \ 'border':  ['fg', 'Ignore'],
+        \ 'prompt':  ['fg', 'Conditional'],
+        \ 'pointer': ['fg', 'Exception'],
+        \ 'marker':  ['fg', 'Keyword'],
+        \ 'spinner': ['fg', 'Label'],
+        \ 'header':  ['fg', 'Comment'] }
 
+    command! -bang -nargs=* Agg
+        \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:50%'), <bang>0)
+
+    nnoremap <leader>f :Lines<cr>
+    nnoremap <leader>g :Agg<cr>
+    nnoremap <leader><leader> :Commands<CR>
+    nnoremap <C-p> :Files<cr>
 
 if exists('LIVE_CODING')
     " 'LIVE_CODING' passed from ~/.config/fish/config.fish 'vimlight' alias
@@ -213,9 +229,17 @@ endif
     let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " COC, Conquer of Completition
-    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-git', 'coc-vetur']
-    " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-    " let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
+    let g:coc_global_extensions = [
+        \ 'coc-emmet',
+        \ 'coc-css',
+        \ 'coc-html',
+        \ 'coc-json',
+        \ 'coc-prettier',
+        \ 'coc-tsserver',
+        \ 'coc-eslint',
+        \ 'coc-git',
+        \ 'coc-vetur'
+    \]
 
     " Use tab for trigger completion with characters ahead and navigate.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
