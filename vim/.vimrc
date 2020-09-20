@@ -39,6 +39,7 @@
     Plug 'hail2u/vim-css3-syntax'
     Plug 'heavenshell/vim-jsdoc'
     Plug 'posva/vim-vue'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
     "Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -284,3 +285,9 @@ endif
     set nobackup
     set nowritebackup
     set shortmess+=c
+
+" Markdown Preview
+    " set to 1, the nvim will auto close current preview window when change
+    " from markdown buffer to another buffer
+    " default: 1
+    let g:mkdp_auto_close = 0
