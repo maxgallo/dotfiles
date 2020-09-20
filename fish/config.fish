@@ -60,3 +60,4 @@ alias edvim "vim ~/.vimrc"
 # More interesting things here
 # https://medium.com/@sidneyliebrand/how-fzf-and-ripgrep-improved-my-workflow-61c7ca212861
 alias vif "vim -O (fzf --multi)"
+set -gx FZF_DEFAULT_OPTS '--height=50% --min-height=15 --reverse'
