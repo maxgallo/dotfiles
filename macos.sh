@@ -55,7 +55,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-# Enable full keyboard access for all controls
+# Enable full keyboard access for all controls  (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
@@ -115,6 +115,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
 
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -bool true
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
 
 
 ###############################################################################
