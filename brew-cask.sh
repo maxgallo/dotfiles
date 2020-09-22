@@ -38,6 +38,7 @@ brew_cask_packages=(
     tidal
     cyberduck
     rectangle # move and resize windows
+    discord
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
