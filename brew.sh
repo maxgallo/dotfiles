@@ -23,6 +23,8 @@ brew_packages=(
     github-markdown-toc # create table of content in markdown files
     wget
     golang
+    ykman # yubikey from terminal
+    imagemagick # convert & concatenate images
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
