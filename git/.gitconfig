@@ -17,3 +17,6 @@
 [user]
     name = Max Gallo
     email = max.gallo@dazn.com
+
+[pull]
+    rebase = false # default merging strategy, otherwise I'd get a warning message
