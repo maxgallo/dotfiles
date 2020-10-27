@@ -291,3 +291,16 @@ endif
     " from markdown buffer to another buffer
     " default: 1
     let g:mkdp_auto_close = 0
+
+" Line numbers
+    " https://jeffkreeftmeijer.com/vim-number/
+    "
+    " insert mode -> absolute
+    " normal mode -> relative
+    :set number relativenumber
+
+    :augroup numbertoggle
+    :  autocmd!
+    :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    :augroup END
