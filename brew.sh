@@ -25,6 +25,7 @@ brew_packages=(
     golang
     ykman # yubikey from terminal
     imagemagick # convert & concatenate images
+    ant
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
