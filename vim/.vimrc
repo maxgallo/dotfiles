@@ -184,6 +184,10 @@ endif
     " commented out since they conflicts with [c ]c in diff
     " nnoremap <silent> ] :vertical resize +10<CR>
     " nnoremap <silent> [ :vertical resize -10<CR>
+    nnoremap <silent> <C-S-Down> :exe "resize " . (winheight(0) * 3/2)<CR>
+    nnoremap <silent> <C-S-Up> :exe "resize " . (winheight(0) * 2/3)<CR>
+    nnoremap <silent> <C-S-Right> :vertical resize +10<CR>
+    nnoremap <silent> <C-S-Left> :vertical resize -10<CR>
 
     "Cycle to views with double tab
     nnoremap <silent> <Tab><Tab> <C-w>w
