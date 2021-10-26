@@ -243,10 +243,12 @@ endif
         \ 'coc-tsserver',
         \ 'coc-eslint',
         \ 'coc-git',
-        \ 'coc-vetur'
+        \ 'coc-vetur',
+        \ 'coc-tabnine'
     \]
 
-    " Use tab for trigger completion with characters ahead and navigate.
+    " Use tab for trigger completion with characters ahead and navigate
+    " through completions.
     " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
     " other plugin before putting this into your config.
     inoremap <silent><expr> <TAB>
@@ -259,6 +261,12 @@ endif
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
+
+    " Allows to press Enter to select a competion
+    " This is needed to support completions containing spaces (generated from TabNine for example)
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
+                \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
     " GoTo code navigation.
     nmap <silent> gd <Plug>(coc-definition)
