@@ -54,7 +54,7 @@ set -gx NVM_DIR ~/.nvm
 alias edvim "vim ~/.vimrc"
 
 # Vi bindings
-# fish_vi_key_bindings
+fish_vi_key_bindings
 
 # FZF
 # More interesting things here
