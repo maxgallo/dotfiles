@@ -66,6 +66,9 @@
     " Use bash as shell (without this one it uses fish and fugitive is crazy slow)
     set shell=/bin/bash
 
+    " Share clipboard with macOS
+    set clipboard=unnamed
+
 
 " Text Formatting
     set autoindent
