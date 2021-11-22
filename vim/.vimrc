@@ -13,7 +13,7 @@
     call plug#begin('~/.vim/plugged')
 
     " Search
-    Plug 'rking/ag.vim'               " Silver Searcher
+    " Plug 'rking/ag.vim'               " Silver Searcher
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
@@ -137,12 +137,14 @@
         \ 'spinner': ['fg', 'Label'],
         \ 'header':  ['fg', 'Comment'] }
 
-    command! -bang -nargs=* Agg
+    command! -bang -nargs=* Ag
         \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:50%'), <bang>0)
 
     nnoremap <leader>f :Lines<cr>
-    nnoremap <leader>g :Agg<cr>
+    nnoremap <leader>g :Ag<cr>
     nnoremap <leader><leader> :Commands<CR>
+    nnoremap <leader>a :Ag <C-R><C-W><CR>
+    nnoremap <leader>c :Commits<cr>
     nnoremap <C-p> :Files<cr>
 
 if exists('LIVE_CODING')
