@@ -34,12 +34,17 @@
     Plug 'pangloss/vim-javascript'
     Plug 'hashivim/vim-terraform'
     Plug 'leafgarland/typescript-vim'
-    Plug 'mxw/vim-jsx'
     Plug 'prettier/vim-prettier' " format using :Prettier
     Plug 'hail2u/vim-css3-syntax'
     Plug 'heavenshell/vim-jsdoc'
     Plug 'posva/vim-vue'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'GutenYe/json5.vim'
+    Plug 'jdonaldson/vaxe' " Haxe language support
+    Plug 'maxmellon/vim-jsx-pretty'
+
+    " Language Specific
+    Plug 'akhaku/vim-java-unused-imports'
 
     "Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -176,9 +181,6 @@ endif
     hi CursorLine gui=none
     hi CursorLine cterm=none
 
-" vim-jsx
-    let g:jsx_ext_required = 0 " no mandatory .jsx for files
-
 " Enabling CSS autocomplete on .scss .css file
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
@@ -222,10 +224,12 @@ endif
 " Remove the window with function definition
     set completeopt=menu
 
-" TypeSCript
+" TypeScript
     autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-    autocmd BufEnter *.tsx set filetype=typescript
-    autocmd BufEnter *.tsx set filetype=javascript.jsx
+    " autocmd BufEnter *.tsx set filetype=typescript
+    " autocmd BufEnter *.tsx set filetype=javascript.jsx
+    " This is from coc-tsserver README
+    " autocmd BufEnter *.tsx set filetype=typescriptreact
 
 " Tries to fixes bash completition
     set isfname-==
@@ -323,3 +327,10 @@ endif
     :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
     :augroup END
+
+" Haxe Laguage
+    let g:vaxe_enable_airline_defaults = 0
+
+" Git
+    " Show git info of selected line (https://www.reddit.com/r/vim/comments/i50pce/how_to_show_commit_that_introduced_current_line/)
+    nmap <silent><Leader>b :call setbufvar(winbufnr(popup_atcursor(systemlist("cd " . shellescape(fnamemodify(resolve(expand('%:p')), ":h")) . " && git log --no-merges -n 1 -L " . shellescape(line("v") . "," . line(".") . ":" . resolve(expand("%:p")))), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
