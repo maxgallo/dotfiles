@@ -168,8 +168,9 @@
         \ 'spinner': ['fg', 'Label'],
         \ 'header':  ['fg', 'Comment'] }
 
+   " search only in file contents (not file names) and show preview on the right
     command! -bang -nargs=* Ag
-        \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview('right:50%'), <bang>0)
+        \ call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%'), <bang>0)
 
     nnoremap <leader>f :Lines<cr>
     nnoremap <leader>g :Ag<cr>
