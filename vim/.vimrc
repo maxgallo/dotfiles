@@ -213,13 +213,7 @@ endif
     autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
 
 " View navigation
-    "Resize vertical view splits with + & -
-    nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-    nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
-    " Resize horizontal view splits with
-    " commented out since they conflicts with [c ]c in diff
-    " nnoremap <silent> ] :vertical resize +10<CR>
-    " nnoremap <silent> [ :vertical resize -10<CR>
+    " Control + Shift + Arrows to resize the windows
     nnoremap <silent> <C-S-Down> :exe "resize " . (winheight(0) * 3/2)<CR>
     nnoremap <silent> <C-S-Up> :exe "resize " . (winheight(0) * 2/3)<CR>
     nnoremap <silent> <C-S-Right> :vertical resize +10<CR>
