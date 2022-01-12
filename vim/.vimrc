@@ -232,6 +232,12 @@ endif
     nnoremap <silent> <Tab>h :wincmd h<CR>
     nnoremap <silent> <Tab>l :wincmd l<CR>
 
+    "Navigation in file
+    " this is SHIFT+ALT+{
+    nnoremap <silent> ’ 10j<CR>
+    " this is SHIFT+ALT+}
+    nnoremap <silent> ” 10k<CR>
+
 " Vim + Ctags Ctrlp
     nnoremap <leader>. :CtrlPTag<cr>
 
