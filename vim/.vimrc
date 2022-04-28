@@ -272,6 +272,10 @@ endif
     let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " COC, Conquer of Completition
+    " Give more space for displaying messages.
+    set cmdheight=2
+
+
     let g:coc_global_extensions = [
         \ 'coc-emmet',
         \ 'coc-css',
@@ -335,6 +339,9 @@ endif
     set nobackup
     set nowritebackup
     set shortmess+=c
+
+    " Use <c-space> to trigger completion.
+    inoremap <silent><expr> <c-@> coc#refresh()
 
 " Markdown Preview
     " set to 1, the nvim will auto close current preview window when change

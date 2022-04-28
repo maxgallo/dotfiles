@@ -20,5 +20,10 @@
     "java.trace.server": "verbose",
     "java.format.enabled": true,
     "java.import.maven.enabled": true,
-    "java.maven.downloadSources": true
+    "java.maven.downloadSources": true,
+    "yaml.completion": true,
+    "yaml.schemas": {
+        "https://s3.eu-central-1.amazonaws.com/schemas.plat.dazn-dev.com/dazn-manifest/3.3.0.schema.json": [".dazn-manifest.yml"]
+    },
+    "yaml.schemaStore.enable": true
 }
