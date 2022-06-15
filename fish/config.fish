@@ -25,7 +25,10 @@ alias vimlight "vim --cmd 'let LIVE_CODING=1'"
 # GO stuff
 #set -x GOPATH ~ # the -x flag exports the variable
 #set PATH $PATH $GOPATH/bin
-set PATH /usr/local/bin ~/bin/ $PATH
+set PATH /usr/local/bin ~/bin/ node_modules/.bin $PATH
+
+# Rust stuff
+set PATH $HOME/.cargo/bin $PATH
 
 # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
 complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'

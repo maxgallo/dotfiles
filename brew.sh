@@ -26,6 +26,7 @@ brew_packages=(
     ykman # yubikey from terminal
     imagemagick # convert & concatenate images
     ant
+    brew install hashicorp/tap/terraform-ls # terraform language server https://github.com/hashicorp/terraform-ls
 )
 
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then

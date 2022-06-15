@@ -15,6 +15,18 @@
     "eslint.nodePath": "/usr/local/lib/node_modules",
     "git.realtimeGutters": true,
     "git.enableGutters": false,
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": ["serve"],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    },
     "tsserver.enableJavascript": true,
     "java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home/",
     "java.trace.server": "verbose",

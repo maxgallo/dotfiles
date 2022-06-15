@@ -23,16 +23,18 @@
     Plug 'jiangmiao/auto-pairs'          " Add parentheses automatically
     Plug 'roryokane/detectindent'        " enables :DetectIndent
     Plug 'preservim/nerdcommenter'
+    " I don't have access to copilot yet
+    " Plug 'github/copilot.vim'
 
     " UI & Windows
     Plug 'vim-airline/vim-airline'
     Plug 'scrooloose/nerdtree'
-    " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'flazz/vim-colorschemes'
 
     " Language specific
     Plug 'pangloss/vim-javascript'
     Plug 'hashivim/vim-terraform'
+    Plug 'juliosueiras/vim-terraform-completion'
     Plug 'leafgarland/typescript-vim'
     Plug 'prettier/vim-prettier' " format using :Prettier
     Plug 'hail2u/vim-css3-syntax'
@@ -42,6 +44,7 @@
     Plug 'GutenYe/json5.vim'
     Plug 'jdonaldson/vaxe' " Haxe language support
     Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'google/vim-jsonnet'
 
     " Language Specific
     Plug 'akhaku/vim-java-unused-imports'
@@ -271,10 +274,9 @@ endif
     let g:airline#extensions#tabline#left_alt_sep = '|'
     let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" COC, Conquer of Completition
+" COC Conquer of Completition
     " Give more space for displaying messages.
     set cmdheight=2
-
 
     let g:coc_global_extensions = [
         \ 'coc-emmet',
