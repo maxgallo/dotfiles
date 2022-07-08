@@ -36,11 +36,50 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 ###############################################################################
 echo "Configuring Dock"
 
-# Automatically hide and show the Dock
+# Keep the dock always visible (no hide and show)
 defaults write com.apple.dock autohide -bool false
 
+
+defaults delete com.apple.dock persistent-apps
+
+dock_item() {
+    printf '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>%s</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>', "$1"
+}
+
+defaults write com.apple.dock persistent-apps -array \
+    "$(dock_item /Applications/1Password.app)" \
+    "$(dock_item /Applications/Microsoft\ Outlook.app)" \
+    "$(dock_item /Applications/Discord.app)" \
+    "$(dock_item /System/Applications/Calendar.app)" \
+    "$(dock_item /Applications/Google\ Chrome.app)" \
+    "$(dock_item /Applications/Google\ Chrome\ Canary.app)" \
+    "$(dock_item /Applications/Firefox.app)" \
+    "$(dock_item /Applications/Firefox\ Developer\ Edition.app)" \
+    "$(dock_item /Applications/Firefox\ Nightly.app)" \
+    "$(dock_item /Applications/Opera.app)" \
+    "$(dock_item /Applications/Microsoft\ Edge.app)" \
+    "$(dock_item /Applications/Safari.app)" \
+    "$(dock_item /Applications/Slack.app)" \
+    "$(dock_item /Applications/Microsoft\ Teams.app)" \
+    "$(dock_item /System/Applications/Notes.app)" \
+    "$(dock_item /Applications/iTerm.app)" \
+    "$(dock_item /Applications/Visual\ Studio\ Code.app)" \
+    "$(dock_item /Applications/Notion.app)" \
+    "$(dock_item /System/Applications/App\ Store.app)" \
+    "$(dock_item /System/Applications/System\ Preferences.app)" \
+    "$(dock_item /Applications/MacDown.app)" \
+    "$(dock_item /Applications/Postman.app)" \
+    "$(dock_item /Applications/TIDAL.app)" \
+    "$(dock_item /Applications/Sketch.app)" \
+    "$(dock_item /Applications/Deckset.app)" \
+    "$(dock_item /System/Library/CoreServices/Applications/Screen\ Sharing.app)" \
+    "$(dock_item /System/Applications/Utilities/Screenshot.app)"
+
+# killall Dock
+
+
 ###############################################################################
-# Trackpad & keyboard                                                         #
+# Trackpad & keyboard          §                                               #
 ###############################################################################
 echo "Configuring Trackpad & Keyboard"
 

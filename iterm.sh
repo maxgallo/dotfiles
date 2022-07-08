@@ -18,7 +18,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 fi
 
 logStep "Installing iTerm2"
-# brew cask install iterm2
+brew install iterm2 --cask
 
 logStep "Symlinking profiles"
 ln -s $dotfiles_folder/iterm/*.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/
