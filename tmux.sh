@@ -35,3 +35,8 @@ ln -s "$dotfiles_folder/tmux/.tmux.conf" ~/.tmux.conf
 # TODO
 # Add override of the CAPSLOCK
 
+# Reload Config file
+tmux source-file ~/.tmux.conf
+# Install plugins (the first time only - same as prefix+I as per Installing)
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+echo -e "To install the p"
