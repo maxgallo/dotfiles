@@ -10,6 +10,7 @@ brew_cask_packages=(
     firefox-developer-edition
     firefox-nightly
     opera
+    microsoft-edge
 
     # More
     drawio # Macosx desktop client
@@ -47,7 +48,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     for i in "${brew_cask_packages[@]}"
     do
         :
-        brew cask uninstall "$i"
+        brew uninstall --cask "$i"
     done
 
     uninstallBrew
@@ -63,21 +64,10 @@ brew tap Yleisradio/terraforms
 brew doctor
 brew update
 
-echo "Installing Brew packages"
-
-for i in "${brew_packages[@]}"
-do
-   :
-   brew install "$i"
-done
-
-# Post installation
-tfenv install # this will install latest package
-
 echo "Installing Cask packages"
 
 for i in "${brew_cask_packages[@]}"
 do
    :
-   brew cask install "$i"
+   brew install --cask "$i"
 done

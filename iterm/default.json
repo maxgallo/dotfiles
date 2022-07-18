@@ -96,7 +96,7 @@
             "Sync Title" : false,
             "Prompt Before Closing 2" : false,
             "BM Growl" : true,
-            "Command" : "\/usr\/local\/bin\/fish",
+            "Command" : "\/opt\/homebrew\/bin\/fish",
             "Description" : "Default",
             "AWDS Pane Directory" : "",
             "Smart Cursor Color" : false,

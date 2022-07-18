@@ -1,9 +1,11 @@
 #!/bin/bash
 source ./utils/confirm.sh
 source ./utils/config.sh
-source ./utils/check.sh
+source ./utils/brew-utils.sh
+source ./utils/file_system.sh
+source ./utils/log.sh
 
-check "brew" || exit
+mandatoryBrew
 
 brew_packages=(
     git
@@ -26,13 +28,13 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     exit
 fi
 
-echo "Installing Git"
+logStep "Installing Git"
 for i in "${brew_packages[@]}"
 do
     :
     brew install "$i"
 done
 
-echo "Symlinking .gitconfig file"
-rm ~/.gitconfig
+logStep "Symlinking .gitconfig file"
+removeIfExists ~/.gitconfig
 ln -s "$dotfiles_folder/git/.gitconfig" ~/.gitconfig
