@@ -41,5 +41,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 echo "omf install https://github.com/fabioantunes/fish-nvm" | fish
 echo "omf install https://github.com/edc/bass" | fish
 
+# this will source node when opening VIM
+nvm_alias_function vim
+
 logStep "Installing latest node"
 echo "nvm install (nvm ls-remote | tail -n 1)" | fish
