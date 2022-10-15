@@ -19,8 +19,8 @@ alias help "tldr"
 alias vimlight "vim --cmd 'let LIVE_CODING=1'"
 
 # ALIASES - macos
-alias desktop_icons_hide "defaults write com.apple.finder CreateDesktop false & killall Finder"
-alias desktop_icons_show "defaults write com.apple.finder CreateDesktop true & killall Finder"
+alias hide_desktop_icons "defaults write com.apple.finder CreateDesktop false & killall Finder"
+alias show_desktop_icons "defaults write com.apple.finder CreateDesktop true & killall Finder"
 
 # set -g fish_term24bit 1
 # fish related commands
