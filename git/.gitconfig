@@ -20,3 +20,6 @@
 
 [pull]
     rebase = false # default merging strategy, otherwise I'd get a warning message
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
