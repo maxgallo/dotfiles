@@ -34,3 +34,15 @@ cd more
 - Article about improvements: https://remysharp.com/2018/08/23/cli-improved
 - Huge dotfiles collection: https://github.com/mathiasbynens/dotfiles
 - Where i copied Karabiner stuff: https://github.com/rkalis/dotfiles
+
+## Order
+os.sh
+- brew.sh
+- brew-cask.sh
+- macos.sh
+
+terminal
+- iterm.sh
+- tmux.sh
+- karabiner.sh
+- fish.sh

@@ -314,6 +314,11 @@ endif
     endfunction
     " ------- END PART COPIED FROM https://github.com/neoclide/coc.nvim
 
+    inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+    inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+    inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+    inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
+
     " GoTo code navigation.
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gy <Plug>(coc-type-definition)
