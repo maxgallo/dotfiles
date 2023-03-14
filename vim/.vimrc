@@ -20,7 +20,7 @@
     " Edit
     Plug 'terryma/vim-multiple-cursors'  " Edit multiple lines in one go
     Plug 'tpope/vim-surround'            " Add, delete or change surrounding parentheses in pairs
-    Plug 'jiangmiao/auto-pairs'          " Add parentheses automatically
+    " Plug 'jiangmiao/auto-pairs'          " Add parentheses automatically
     Plug 'roryokane/detectindent'        " enables :DetectIndent
     Plug 'preservim/nerdcommenter'
     " I don't have access to copilot yet
@@ -288,7 +288,8 @@ endif
         \ 'coc-eslint',
         \ 'coc-git',
         \ 'coc-vetur',
-        \ 'coc-tabnine'
+        \ 'coc-tabnine',
+        \ 'coc-go'
     \]
 
     " ------- BEGIN PART COPIED FROM https://github.com/neoclide/coc.nvim
