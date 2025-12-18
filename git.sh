@@ -38,3 +38,7 @@ done
 logStep "Symlinking .gitconfig file"
 removeIfExists ~/.gitconfig
 ln -s "$dotfiles_folder/git/.gitconfig" ~/.gitconfig
+
+logStep "Symlinking .gitignore_global file"
+removeIfExists ~/.gitignore_global
+ln -s "$dotfiles_folder/git/.gitignore_global" ~/.gitignore_global
