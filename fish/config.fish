@@ -106,25 +106,7 @@ bind -M insert \cr _atuin_search
 # TODO: have a look https://news.ycombinator.com/item?id=43478236
 
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/sls.fish ]; and . /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/sls.fish
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[ -f /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/slss.fish ]; and . /Users/max.gallo/github/getndazn/feeds-collector/node_modules/tabtab/.completions/slss.fish
-
-# pyenv init - | source
-# had to disable this since from time to time a new terminal froze (even inside vim)
-# and gotpyenv: cannot rehash: /Users/max.gallo/.pyenv/shims/.pyenv-shim exists
-
-# Ruby
-# status --is-interactive; and rbenv init - fish | source
-
-
-# Hydro
+# OTHER - Hydro (fish prompt)
 set hydro_color_pwd yellow
 set hydro_color_git green
 set hydro_color_prompt blue
