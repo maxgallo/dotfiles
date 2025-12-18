@@ -1,0 +1,22 @@
+# This is used on interactive shells only (eg. new terminal)
+# if you want to do something at launch for login shell, create a ~/.bash_profile
+#
+alias ll='ls -al'
+alias sourcekitsad='rm -rf ~/Library/Developer/Xcode/DerivedData'
+alias refresh_bash_profile='source ~/.bash_profile'
+alias clear='printf "\033c"'
+
+export LC_ALL="en_US.UTF-8"
+
+export JAVA_HOME=/opt/homebrew/opt/openjdk@11
+export JDK_HOME=/opt/homebrew/opt/openjdk@11
+export ANDROID_SDK_ROOT=/opt/homebrew/share/android-commandlinetools
+
+## NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

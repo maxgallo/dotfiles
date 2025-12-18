@@ -18,8 +18,8 @@ fi
 
 logStep "Symlinking .bashrc"
 removeIfExists ~/.bashrc
-ln -s "$dotfiles_folder/bash/.bashrc" ~/.bashrc
+ln -s "$dotfiles_folder/bash/bashrc" ~/.bashrc
 
 logStep "Symlinkin .bash_profile"
 removeIfExists ~/.bash_profile
-ln -s "$dotfiles_folder/bash/.bash_profile" ~/.bash_profile
+ln -s "$dotfiles_folder/bash/bash_profile" ~/.bash_profile
