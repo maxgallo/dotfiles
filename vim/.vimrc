@@ -23,8 +23,7 @@
     " Plug 'jiangmiao/auto-pairs'          " Add parentheses automatically
     Plug 'roryokane/detectindent'        " enables :DetectIndent
     Plug 'preservim/nerdcommenter'
-    " I don't have access to copilot yet
-    " Plug 'github/copilot.vim'
+    Plug 'github/copilot.vim'
 
     " UI & Windows
     Plug 'vim-airline/vim-airline'
@@ -45,11 +44,12 @@
     Plug 'jdonaldson/vaxe' " Haxe language support
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'google/vim-jsonnet'
+    Plug 'udalov/kotlin-vim'
 
     " Language Specific
     Plug 'akhaku/vim-java-unused-imports'
 
-    "Autocompletion & Syntax
+    " Autocompletion & Syntax
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Git
