@@ -1,3 +1,10 @@
 *.swp
 
 fish/functions/fish_prompt.fish
+fish/secrets.fish
+
+# Ignore third-party fish functions (fisher, nvm, etc)
+fish/functions/fisher.fish
+fish/functions/nvm.fish
+fish/functions/_nvm_*.fish
+fish/functions/fish_mode_prompt.fish
