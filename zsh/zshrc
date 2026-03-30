@@ -38,3 +38,6 @@ if [ -s "$HOME/.rvm/scripts/rvm" ]; then
   # Make sure it runs once
   [ -z "$RVM_LOADED" ] && source "$HOME/.rvm/scripts/rvm" && export RVM_LOADED=1
 fi
+
+#Vega CLI
+source "/Users/max.gallo/vega/env"

@@ -49,7 +49,7 @@ fish_vi_key_bindings
 # ---------------------------------
 # PATH
 # ---------------------------------
-fish_add_path /usr/local/bin ~/bin/ /opt/homebrew/bin/ node_modules/.bin
+fish_add_path /usr/local/bin ~/bin/ /opt/homebrew/bin/ node_modules/.bin $HOME/.local/bin
 
 # Always use `fish_add_path` here in this file (or in interactive shell). It will do the right thing.
 #    - This will appended entries inside a variable `echo $fish_user_paths` which is automatically loaded inside PATH
@@ -73,8 +73,8 @@ set -gx ANDROID_NDK_HOME /Users/max.gallo/Library/Android/sdk/ndk/28.1.13356709
 # this is to access "aapt" command
 fish_add_path $ANDROID_HOME/build-tools/35.0.0
 
-# OTHER - Amazon Kepler
-set -gx KEPLER_SDK_PATH /Users/max.gallo/kepler/sdk/0.20.3719
+# OTHER - Amazon Vega
+set -gx KEPLER_SDK_PATH /Users/max.gallo/vega/sdk/vega-sdk/main/0.22.6006
 fish_add_path $KEPLER_SDK_PATH/bin $KEPLER_SDK_PATH/bin/tools
 
 # OTHER - AWS CLI

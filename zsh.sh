@@ -4,17 +4,17 @@ source ./utils/confirm.sh
 source ./utils/log.sh
 source ./utils/file_system.sh
 
-# if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
-    # confirm "Are you sure you want to uninstall .bash_profile?" || exit
+if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
+    confirm "Are you sure you want to uninstall .zshrc and .zshenv?" || exit
 
-    # logStep "Removing .bashrc"
-    # rm ~/.bashrc
+    logStep "Removing .zshrc"
+    rm ~/.zshrc
 
-    # logStep "Removing .bash_profile"
-    # rm ~/.bash_profile
+    logStep "Removing .zshenv"
+    rm ~/.zshenv
 
-    # exit
-# fi
+    exit
+fi
 
 logStep "Symlinking .zshrc"
 removeIfExists ~/.zshrc

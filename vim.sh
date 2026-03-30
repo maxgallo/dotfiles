@@ -22,7 +22,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 
     echo "Removing ~/.vimrc configuration file"
     rm ~/.vimrc
-    rm ~/.vim/coc-setttings.json
+    rm ~/.vim/coc-settings.json
 
     exit
 fi
@@ -37,4 +37,4 @@ logStep "Installing typescript"
 npm install -g typescript
 
 logStep "Symlinking ~/.vim/coc-settings.json"
-ln -s "$dotfiles_folder/vim/coc-setttings.json" ~/.vim/coc-settings.json
+ln -s "$dotfiles_folder/vim/coc-settings.json" ~/.vim/coc-settings.json

@@ -3,6 +3,9 @@ source ../utils/confirm.sh
 source ../utils/brew-utils.sh
 source ../utils/log.sh
 
+# MAS - Mac App Store packages to install
+# ---------------------------------
+
 # "mas search xzy" to search for packages
 mas_packages=(
     668208984  # GIPHY Capture. The GIF Maker

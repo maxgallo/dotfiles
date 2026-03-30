@@ -15,6 +15,9 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     echo "Deleting fish configuration"
     rm -rf ~/.config/fish/
 
+    echo "Uninstalling Fisher and all plugins"
+    fisher list | fisher remove
+
     exit
 fi
 
@@ -30,8 +33,8 @@ if [[ ! "$(type -P omf)" ]]; then
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
     ## install nvm
-    # fisher install jorgebucaran/nvm.fish
-    # fisher install franciscolourenco/done # to show a macos notification on >5s tasks
+    # fisher install jorgebucaran/nvm.fish THIS IS HAPPENING INSIDE nvm.sh NOW
+    fisher install franciscolourenco/done # to show a macos notification on >5s tasks
 fi
 
 logStep "Symlinking config.fish file"
