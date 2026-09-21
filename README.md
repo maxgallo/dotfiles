@@ -15,6 +15,7 @@ Removing or adding functionalities atomically works better than a single `instal
 ./vim.sh        # VIM with all plugins
 ./fish.sh       # Fish shell
 ./herdr.sh      # Herdr terminal workspace config
+./claude.sh     # Claude Code status line
 ./bash.sh       # Minimum Bash setup
 ./nvm.sh        # Nvm with multiple Node installed
 ./iterm.sh      # iTerm2 with custom profiles
@@ -34,3 +35,4 @@ cd more
 - Article about improvements: https://remysharp.com/2018/08/23/cli-improved
 - Huge dotfiles collection: https://github.com/mathiasbynens/dotfiles
 - Where i copied Karabiner stuff: https://github.com/rkalis/dotfiles
+- [@simmo](https://github.com/simmo) for the Claude Code status line
