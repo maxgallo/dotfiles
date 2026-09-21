@@ -17,8 +17,22 @@ Settings > Trusted Certificate > Enable Full Trust for Root Certificates
 
 https://vladzz.medium.com/setting-up-mitmproxy-on-ios-simulator-4a7f9889c2fc
 
+## Android
+enable proxy (starts by default at port 8080)
+adb -s 192.168.0.238 shell settings put global http_proxy 192.168.0.100:8080
+
+disable proxy
+adb -s 192.168.0.238 shell settings put global http_proxy :0
+
 
 ## Keys
 - Ctrl-f page down
 - Ctrl-b page up
 - F toggle "follow" mode
+
+- z clear all flows
+- f search
+
+: save.har @all ~/Desktop/autoplay-black-screen.har
+
+: cut.save @focus response.content ~/Desktop/manifest-nodrm-broken.mpd
