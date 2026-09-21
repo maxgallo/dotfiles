@@ -1,0 +1,8 @@
+onboarding = false
+
+[terminal]
+# Fish for every new interactive pane (login shell via the default shell_mode = "auto")
+default_shell = "/opt/homebrew/bin/fish"
+
+[ui]
+agent_panel_sort = "spaces"

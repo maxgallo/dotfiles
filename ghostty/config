@@ -1,0 +1,12 @@
+# ---------------------------------
+# SHELL
+# ---------------------------------
+
+# Use fish instead of the account login shell.
+#
+# Ghostty resolves its default shell from $SHELL, then the passwd entry.
+# A GUI-launched Ghostty inherits no $SHELL, so it falls back to passwd,
+# which is /bin/bash on this machine. Set it explicitly.
+#
+# `--login` so fish runs path_helper, matching how bash/zsh start here.
+command = /opt/homebrew/bin/fish --login

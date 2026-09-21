@@ -14,6 +14,7 @@ Removing or adding functionalities atomically works better than a single `instal
 ./tmux.sh       # tmux & aliases
 ./vim.sh        # VIM with all plugins
 ./fish.sh       # Fish shell
+./herdr.sh      # Herdr terminal workspace config
 ./bash.sh       # Minimum Bash setup
 ./nvm.sh        # Nvm with multiple Node installed
 ./iterm.sh      # iTerm2 with custom profiles
@@ -33,15 +34,3 @@ cd more
 - Article about improvements: https://remysharp.com/2018/08/23/cli-improved
 - Huge dotfiles collection: https://github.com/mathiasbynens/dotfiles
 - Where i copied Karabiner stuff: https://github.com/rkalis/dotfiles
-
-## Order
-os.sh
-- brew.sh
-- brew-cask.sh
-- macos.sh
-
-terminal
-- iterm.sh
-- tmux.sh
-- karabiner.sh
-- fish.sh
