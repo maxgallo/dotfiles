@@ -58,9 +58,6 @@ fi
 # Make sure homebrew is installed first
 mandatoryBrew
 
-brew tap homebrew/cask
-brew tap homebrew/cask-versions
-brew tap Yleisradio/terraforms
 brew doctor
 brew update
 

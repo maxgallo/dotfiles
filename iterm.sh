@@ -12,7 +12,7 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     confirm "Are you sure you want to uninstall iTerm2?" || exit
 
     echo "Uninstalling iTerm2"
-    brew cask uninstall iterm2
+    brew uninstall --cask iterm2
 
     exit
 fi

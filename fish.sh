@@ -9,14 +9,14 @@ check "brew" || (echo "we need brew to do stuff :(" ; exit)
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     confirm "Are you sure you want to uninstall Fish Shell?" || exit
 
+    echo "Uninstalling Fisher and all plugins"
+    fish -c "fisher list | fisher remove"
+
     echo "Uninstalling Fish"
     brew uninstall fish
 
     echo "Deleting fish configuration"
     rm -rf ~/.config/fish/
-
-    echo "Uninstalling Fisher and all plugins"
-    fisher list | fisher remove
 
     exit
 fi
@@ -27,14 +27,13 @@ if [[ ! "$(type -P fish)" ]]; then
     brew install fish
 fi
 
-# Install fisher
-if [[ ! "$(type -P omf)" ]]; then
+# Install fisher (it's a fish function, not a binary, so ask fish about it)
+if ! fish -c "type -q fisher"; then
     logStep "Installing Fisher"
-    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 
-    ## install nvm
-    # fisher install jorgebucaran/nvm.fish THIS IS HAPPENING INSIDE nvm.sh NOW
-    fisher install franciscolourenco/done # to show a macos notification on >5s tasks
+    # nvm.fish is installed by nvm.sh
+    fish -c "fisher install franciscolourenco/done" # to show a macos notification on >5s tasks
 fi
 
 logStep "Symlinking config.fish file"

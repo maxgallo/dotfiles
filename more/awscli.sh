@@ -10,11 +10,9 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 
     logStep "Uninstalling AWS CLI"
     brew uninstall awscli
-    echo "omf uninstall aws" | fish
 
     exit
 fi
 
 logStep "Installing AWS CLI"
-brew install awscli
-echo "omf install aws" | fish # fish autocompletion for aws
+brew install awscli # fish autocompletion is configured in fish/config.fish
