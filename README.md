@@ -1,14 +1,16 @@
 # Max's dotfiles
 
-My personal macOS setup: shell, editor, terminal, git and app configuration, plus the scripts that install them.
+My personal setup for macOS and Linux: shell, editor, terminal, git and app configuration, plus the scripts that install them. Most of it works on both; the macOS-only parts are listed separately below.
 
 Each tool has its own small install script instead of one big `install-everything.sh`. That way I can add or remove one piece at a time, a failure in one script can't leave the whole machine half-configured, and problems are easy to isolate.
 
 ## Requirements
 
-- **macOS** (Apple Silicon paths such as `/opt/homebrew` are assumed in a few configs)
+- **macOS or Linux**. The scripts install packages with Homebrew on both (on Linux that's [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux)).
 - **The repo cloned at `~/github/maxgallo/dotfiles`**. Configs are symlinked from there; the path is set in [`utils/config.sh`](utils/config.sh), so change it if you clone it elsewhere.
 - [Homebrew](https://brew.sh) is installed automatically by the scripts that need it.
+
+> **Linux note:** a few configs still point at macOS-specific paths, such as `/opt/homebrew/bin/fish` (tmux, ghostty, herdr), `pbcopy` (tmux) and `/Users/max.gallo/...` (fish, bash, zsh). Adjust those on a Linux machine.
 
 ## Getting started
 
@@ -36,11 +38,11 @@ Every script accepts `--remove` (or `-r`) to undo what it did. It asks for confi
 
 ## Scripts
 
+### macOS and Linux
+
 | Script | What it does | Config files |
 | --- | --- | --- |
-| `macos.sh` | Applies macOS defaults: dark mode, hot corners, Dock apps, trackpad, Finder, menu bar | – |
 | `brew.sh` | Installs CLI tools (`bat`, `fd`, `fzf`, `jq`, `tldr`, `tfenv`, ...) | – |
-| `brew-cask.sh` | Installs GUI apps (browsers, Slack, Docker, 1Password, ...) | – |
 | `git.sh` | Installs git + `diff-so-fancy`, links the global config and gitignore | [`git/`](git) → `~/.gitconfig`, `~/.gitignore_global` |
 | `fish.sh` | Installs fish, [Fisher](https://github.com/jorgebucaran/fisher) and the `done` plugin, links config and functions | [`fish/`](fish) → `~/.config/fish/` |
 | `nvm.sh` | Installs [nvm.fish](https://github.com/jorgebucaran/nvm.fish) and the latest Node (run after `fish.sh`) | – |
@@ -49,21 +51,28 @@ Every script accepts `--remove` (or `-r`) to undo what it did. It asks for confi
 | `tmux.sh` | Installs tmux, [TPM](https://github.com/tmux-plugins/tpm) and its plugins, links the config | [`tmux/.tmux.conf`](tmux/.tmux.conf) → `~/.tmux.conf` |
 | `bash.sh` | Minimal bash setup | [`bash/`](bash) → `~/.bashrc`, `~/.bash_profile` |
 | `zsh.sh` | Minimal zsh setup | [`zsh/`](zsh) → `~/.zshrc`, `~/.zshenv` |
-| `iterm.sh` | Installs iTerm2 with my dynamic profiles | [`iterm/`](iterm) → iTerm2 `DynamicProfiles/` |
-| `karabiner.sh` | Installs Karabiner-Elements for key remapping | [`karabiner/karabiner.json`](karabiner/karabiner.json) → `~/.config/karabiner/` |
 | `herdr.sh` | Links the Herdr config and reloads a running server | [`herdr/config.toml`](herdr/config.toml) → `~/.config/herdr/` |
 | `claude.sh` | Links the Claude Code status line and registers it in `~/.claude/settings.json` | [`claude/statusline.sh`](claude/statusline.sh) → `~/.claude/` |
+
+### macOS only
+
+| Script | What it does | Config files |
+| --- | --- | --- |
+| `macos.sh` | Applies macOS defaults: dark mode, hot corners, Dock apps, trackpad, Finder, menu bar | – |
+| `brew-cask.sh` | Installs GUI apps through Homebrew casks (browsers, Slack, Docker, 1Password, ...) | – |
+| `iterm.sh` | Installs iTerm2 with my dynamic profiles | [`iterm/`](iterm) → iTerm2 `DynamicProfiles/` |
+| `karabiner.sh` | Installs Karabiner-Elements for key remapping | [`karabiner/karabiner.json`](karabiner/karabiner.json) → `~/.config/karabiner/` |
 
 ### Extras (`more/`)
 
 Things I don't install on every machine.
 
-| Script | What it does |
-| --- | --- |
-| `more/mas.sh` | Installs Mac App Store apps through [`mas`](https://github.com/mas-cli/mas) |
-| `more/awscli.sh` | Installs the AWS CLI (fish completion lives in `config.fish`) |
-| `more/eslint.sh` | Installs ESLint + TypeScript globally and links [`more/.eslintrc.json`](more/.eslintrc.json) |
-| `more/shuttle.sh` | Installs [Shuttle](https://github.com/fitztrev/shuttle), the SSH shortcut menu |
+| Script | What it does | Platform |
+| --- | --- | --- |
+| `more/awscli.sh` | Installs the AWS CLI (fish completion lives in `config.fish`) | macOS, Linux |
+| `more/eslint.sh` | Installs ESLint + TypeScript globally and links [`more/.eslintrc.json`](more/.eslintrc.json) | macOS, Linux |
+| `more/mas.sh` | Installs Mac App Store apps through [`mas`](https://github.com/mas-cli/mas) | macOS |
+| `more/shuttle.sh` | Installs [Shuttle](https://github.com/fitztrev/shuttle), the SSH shortcut menu | macOS |
 
 ## Config without a script
 

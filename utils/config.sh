@@ -1,2 +1,2 @@
 #!/bin/bash
-dotfiles_folder="/Users/$(whoami)/github/maxgallo/dotfiles"
+dotfiles_folder="$HOME/github/maxgallo/dotfiles"
