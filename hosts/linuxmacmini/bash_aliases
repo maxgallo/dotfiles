@@ -1,0 +1,12 @@
+# Server additions to bash, linked to ~/.bash_aliases by install.sh.
+#
+# Debian's default ~/.bashrc stays as shipped: it loads this file for
+# interactive shells, and Debian's ~/.profile adds ~/.local/bin to PATH.
+
+export EDITOR=vim
+
+alias ll='ls -al'
+
+# bat is installed as "batcat" on Debian (another package owns "bat")
+alias bat='batcat'
+alias cat='batcat'

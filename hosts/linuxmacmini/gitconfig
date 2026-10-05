@@ -1,0 +1,13 @@
+# Server git config: the shared config plus a few server overrides.
+# Linked to ~/.gitconfig by hosts/linuxmacmini/install.sh.
+
+[include]
+    path = ~/github/maxgallo/dotfiles/git/.gitconfig
+
+[alias]
+    di = diff # diff-so-fancy isn't in apt
+
+# Name and email, kept out of this public repo. Created by install.sh.
+# Last, so it overrides the [user] of the shared config.
+[include]
+    path = ~/.gitconfig.local
