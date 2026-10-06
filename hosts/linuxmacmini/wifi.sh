@@ -34,7 +34,7 @@ if ! lspci -nn | grep -q '14e4:43a0'; then
 fi
 
 logStep "Enabling the non-free apt component (broadcom-sta-dkms lives there)"
-if apt-cache show broadcom-sta-dkms > /dev/null 2>&1; then
+if apt-cache policy broadcom-sta-dkms | grep -q "Candidate: [0-9]"; then
     echo "already enabled"
 else
     . /etc/os-release
