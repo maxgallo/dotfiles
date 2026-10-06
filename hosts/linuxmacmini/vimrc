@@ -1,0 +1,54 @@
+" Server vimrc: vim's defaults plus NERDTree, fzf (Ctrl-P) and Tab window
+" navigation, like on the Mac.
+" Linked to ~/.vimrc by install.sh, which also installs the plugins.
+
+" Having a ~/.vimrc stops vim from loading its defaults (syntax highlighting,
+" ruler, incremental search, ...), so load them explicitly
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" vim-plug (https://github.com/junegunn/vim-plug)
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+    call plug#begin('~/.vim/plugged')
+    Plug 'scrooloose/nerdtree'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " downloads the latest fzf binary
+    Plug 'junegunn/fzf.vim'
+    call plug#end()
+
+" General
+    set number
+    set tabstop=4     " The width of a TAB is 4, but it's still \t
+    set softtabstop=4 " Set the number of columns for a TAB
+    set shiftwidth=4  " Indents will have a width of 4
+    set expandtab     " On pressing TAB, insert 4 spaces
+    set nowrap
+
+" NERDTree
+    " Open it only when vim starts without a file or on a folder, so it stays
+    " out of the way of crontab -e, git commit and other $EDITOR uses
+    autocmd StdinReadPre * let s:std_in = 1
+    autocmd VimEnter * if !exists('s:std_in') && (argc() == 0 || (argc() == 1 && isdirectory(argv()[0]))) | NERDTree | wincmd p | endif
+    let NERDTreeIgnore = ['\.git$']
+
+" fzf
+    let g:fzf_layout = { 'down': '~40%' }
+    nnoremap <C-p> :Files<cr>
+
+" Windows
+    " Cycle through windows with a double Tab
+    nnoremap <silent> <Tab><Tab> <C-w>w
+
+    " Move between windows with Tab + arrows (or hjkl)
+    nnoremap <silent> <Tab><Up> :wincmd k<CR>
+    nnoremap <silent> <Tab><Down> :wincmd j<CR>
+    nnoremap <silent> <Tab><Left> :wincmd h<CR>
+    nnoremap <silent> <Tab><Right> :wincmd l<CR>
+    nnoremap <silent> <Tab>k :wincmd k<CR>
+    nnoremap <silent> <Tab>j :wincmd j<CR>
+    nnoremap <silent> <Tab>h :wincmd h<CR>
+    nnoremap <silent> <Tab>l :wincmd l<CR>
