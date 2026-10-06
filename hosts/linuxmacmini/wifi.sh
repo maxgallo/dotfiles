@@ -64,8 +64,10 @@ fi
 logStep "Swapping b43 for wl"
 sudo modprobe -r b43 ssb bcma 2> /dev/null
 sudo modprobe wl
-for _ in 1 2 3 4 5; do
-    wifi_interface=$(ls -d /sys/class/net/*/wireless 2> /dev/null | head -1 | cut -d/ -f5)
+# wl creates wlan0 and udev then renames it (wlp2s0), so wait for that and ask NetworkManager
+sudo udevadm settle
+for _ in 1 2 3 4 5 6 7 8 9 10; do
+    wifi_interface=$(nmcli -t -f DEVICE,TYPE device | awk -F: '$2 == "wifi" { print $1; exit }')
     [ -n "$wifi_interface" ] && break
     sleep 1
 done
