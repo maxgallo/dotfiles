@@ -1,5 +1,5 @@
 #!/bin/bash
-# Server setup: bash, git, vim and Claude Code. Run from the repo root:
+# Server setup: bash, git, vim (NERDTree, fzf), Claude Code and power on after power loss. Run from the repo root:
 #   ./hosts/linuxmacmini/install.sh
 source ./utils/confirm.sh
 source ./utils/config.sh
@@ -12,8 +12,16 @@ apt_packages="git curl vim bat"
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     confirm "Are you sure you want to remove the server configuration?" || exit
 
-    echo "Removing ~/.bash_aliases, ~/.gitconfig and ~/.gitignore_global symlinks"
-    rm -f ~/.bash_aliases ~/.gitconfig ~/.gitignore_global
+    echo "Removing ~/.bash_aliases, ~/.gitconfig, ~/.gitignore_global and ~/.vimrc symlinks"
+    rm -f ~/.bash_aliases ~/.gitconfig ~/.gitignore_global ~/.vimrc
+
+    echo "Removing vim-plug and the vim plugins"
+    rm -rf ~/.vim/autoload/plug.vim ~/.vim/plugged
+
+    echo "Removing the power-on-after-power-loss service (the setting stays until the next reset)"
+    sudo systemctl disable --now power-on-after-power-loss.service
+    sudo rm -f /etc/systemd/system/power-on-after-power-loss.service
+    sudo systemctl daemon-reload
 
     echo "Kept: ~/.gitconfig.local (your git identity), apt packages and Claude Code"
     exit
@@ -40,6 +48,14 @@ fi
 logStep "Symlinking .bash_aliases (loaded by Debian's default ~/.bashrc)"
 linkWithBackup "$host_folder/bash_aliases" ~/.bash_aliases
 
+logStep "Symlinking .vimrc"
+linkWithBackup "$host_folder/vimrc" ~/.vimrc
+
+logStep "Installing vim plugins and the fzf binary"
+# fzf#install() also covers a plugin installed before its download hook existed
+vim -Es -u ~/.vimrc -c 'PlugInstall --sync' -c 'call fzf#install()' -c 'qa!'
+~/.vim/plugged/fzf/bin/fzf --version
+
 logStep "Symlinking .gitconfig and .gitignore_global"
 linkWithBackup "$host_folder/gitconfig" ~/.gitconfig
 linkWithBackup "$dotfiles_folder/git/.gitignore_global" ~/.gitignore_global
@@ -51,3 +67,10 @@ if [ ! -f ~/.gitconfig.local ]; then
     git config --file ~/.gitconfig.local user.name "$git_name"
     git config --file ~/.gitconfig.local user.email "$git_email"
 fi
+
+logStep "Enabling power on after power loss"
+# Copied rather than linked: systemd can't load units from a home folder at boot
+sudo cp "$host_folder/power-on-after-power-loss.service" /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now power-on-after-power-loss.service
+echo "AFTERG3_EN register: 0x$(sudo setpci -s 00:1f.0 0xa4.b) (bit 0 off = powers on)"
