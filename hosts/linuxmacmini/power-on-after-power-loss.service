@@ -1,0 +1,12 @@
+# Power the Mac mini back on when power returns after an outage.
+# Clears AFTERG3_EN (bit 0 of GEN_PMCON_3, 0xA4 on the LPC bridge 00:1f.0),
+# which the firmware can reset, so it runs on every boot.
+[Unit]
+Description=Power on after power loss
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setpci -s 00:1f.0 0xa4.b=0:1
+
+[Install]
+WantedBy=multi-user.target

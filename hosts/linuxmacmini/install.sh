@@ -1,5 +1,5 @@
 #!/bin/bash
-# Server setup: bash, git, vim (NERDTree, fzf) and Claude Code. Run from the repo root:
+# Server setup: bash, git, vim (NERDTree, fzf), Claude Code and power on after power loss. Run from the repo root:
 #   ./hosts/linuxmacmini/install.sh
 source ./utils/confirm.sh
 source ./utils/config.sh
@@ -17,6 +17,11 @@ if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
 
     echo "Removing vim-plug and the vim plugins"
     rm -rf ~/.vim/autoload/plug.vim ~/.vim/plugged
+
+    echo "Removing the power-on-after-power-loss service (the setting stays until the next reset)"
+    sudo systemctl disable --now power-on-after-power-loss.service
+    sudo rm -f /etc/systemd/system/power-on-after-power-loss.service
+    sudo systemctl daemon-reload
 
     echo "Kept: ~/.gitconfig.local (your git identity), apt packages and Claude Code"
     exit
@@ -62,3 +67,10 @@ if [ ! -f ~/.gitconfig.local ]; then
     git config --file ~/.gitconfig.local user.name "$git_name"
     git config --file ~/.gitconfig.local user.email "$git_email"
 fi
+
+logStep "Enabling power on after power loss"
+# Copied rather than linked: systemd can't load units from a home folder at boot
+sudo cp "$host_folder/power-on-after-power-loss.service" /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now power-on-after-power-loss.service
+echo "AFTERG3_EN register: 0x$(sudo setpci -s 00:1f.0 0xa4.b) (bit 0 off = powers on)"
