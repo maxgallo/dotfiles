@@ -1,5 +1,5 @@
 #!/bin/bash
-# Server setup: bash, git, vim and Claude Code. Run from the repo root:
+# Server setup: bash, git, vim (NERDTree, fzf) and Claude Code. Run from the repo root:
 #   ./hosts/linuxmacmini/install.sh
 source ./utils/confirm.sh
 source ./utils/config.sh
@@ -12,8 +12,11 @@ apt_packages="git curl vim bat"
 if [ "$1" == "--remove" ] || [ "$1" == "-r" ]; then
     confirm "Are you sure you want to remove the server configuration?" || exit
 
-    echo "Removing ~/.bash_aliases, ~/.gitconfig and ~/.gitignore_global symlinks"
-    rm -f ~/.bash_aliases ~/.gitconfig ~/.gitignore_global
+    echo "Removing ~/.bash_aliases, ~/.gitconfig, ~/.gitignore_global and ~/.vimrc symlinks"
+    rm -f ~/.bash_aliases ~/.gitconfig ~/.gitignore_global ~/.vimrc
+
+    echo "Removing vim-plug and the vim plugins"
+    rm -rf ~/.vim/autoload/plug.vim ~/.vim/plugged
 
     echo "Kept: ~/.gitconfig.local (your git identity), apt packages and Claude Code"
     exit
@@ -39,6 +42,14 @@ fi
 
 logStep "Symlinking .bash_aliases (loaded by Debian's default ~/.bashrc)"
 linkWithBackup "$host_folder/bash_aliases" ~/.bash_aliases
+
+logStep "Symlinking .vimrc"
+linkWithBackup "$host_folder/vimrc" ~/.vimrc
+
+logStep "Installing vim plugins and the fzf binary"
+# fzf#install() also covers a plugin installed before its download hook existed
+vim -Es -u ~/.vimrc -c 'PlugInstall --sync' -c 'call fzf#install()' -c 'qa!'
+~/.vim/plugged/fzf/bin/fzf --version
 
 logStep "Symlinking .gitconfig and .gitignore_global"
 linkWithBackup "$host_folder/gitconfig" ~/.gitconfig
