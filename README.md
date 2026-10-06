@@ -43,7 +43,7 @@ Every script accepts `--remove` (or `-r`) to undo what it did. It asks for confi
 | Script | What it does | Config files |
 | --- | --- | --- |
 | `brew.sh` | Installs CLI tools (`bat`, `fd`, `fzf`, `jq`, `tldr`, `tfenv`, ...) | – |
-| `git.sh` | Installs git + `diff-so-fancy`, links the global config and gitignore | [`git/`](git) → `~/.gitconfig`, `~/.gitignore_global` |
+| `git.sh` | Installs git + `diff-so-fancy`, links the global config and gitignore, asks for your name and email (kept in the untracked `~/.gitconfig.local`) | [`git/`](git) → `~/.gitconfig`, `~/.gitignore_global` |
 | `fish.sh` | Installs fish, [Fisher](https://github.com/jorgebucaran/fisher) and the `done` plugin, links config and functions | [`fish/`](fish) → `~/.config/fish/` |
 | `nvm.sh` | Installs [nvm.fish](https://github.com/jorgebucaran/nvm.fish) and the latest Node (run after `fish.sh`) | – |
 | `yarn.sh` | Installs global yarn packages (`prettier`, `nodemon`, `serverless`) | – |
