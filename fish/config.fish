@@ -97,6 +97,11 @@ if test -f ~/.config/fish/secrets.fish
     source ~/.config/fish/secrets.fish
 end
 
+# OTHER - Work-specific config, kept on the machine only (not in this public repo)
+if test -f ~/.config/fish/work.fish
+    source ~/.config/fish/work.fish
+end
+
 # OTHER - Atuin
 set -gx ATUIN_NOBIND "true"
 atuin init fish | source
@@ -106,6 +111,11 @@ bind -M insert \cr _atuin_search
 # TODO: have a look https://news.ycombinator.com/item?id=43478236
 
 
+# OTHER - rbenv
+if type -q rbenv
+    rbenv init - fish | source
+end
+
 # OTHER - Hydro (fish prompt)
 set hydro_color_pwd yellow
 set hydro_color_git green
@@ -113,3 +123,12 @@ set hydro_color_prompt blue
 
 # https://gist.github.com/xto3na/be59699271121180e079
 set hydro_symbol_git_dirty " ✖"
+
+# OTHER - Editor (for mitmproxy)
+set -x EDITOR vim
+
+# OTHER - pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+if not string match -q -- "$PNPM_HOME/bin" $PATH
+    set -gx PATH "$PNPM_HOME/bin" $PATH
+end
