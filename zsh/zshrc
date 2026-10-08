@@ -10,6 +10,14 @@ fi
 # Homebrew (Apple Silicon)
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
+# User binaries (herdr, claude, ...) — matches fish_add_path in fish/config.fish
+if [ -d "$HOME/.local/bin" ]; then
+  case ":$PATH:" in
+    *":$HOME/.local/bin:"*) ;; # already there
+    *) export PATH="$HOME/.local/bin:$PATH" ;;
+  esac
+fi
+
 # ---------------------------------
 # NVM (Node Version Manager)
 # ---------------------------------
@@ -41,3 +49,20 @@ fi
 
 #Vega CLI
 source "/Users/max.gallo/vega/env"
+
+# sdb (Tizen) completion. It's a bash script, so it needs zsh's bash completion layer
+if [ -f ~/.sdb/.sdb-completion.bash ]; then
+  autoload -U +X compinit && compinit
+  autoload -U +X bashcompinit && bashcompinit
+  source ~/.sdb/.sdb-completion.bash
+fi
+
+# Tizen SDK (installed by the Tizen VS Code extension)
+tizen_sdk="$HOME/.tizen-extension-platform/server/sdktools/data"
+if [ -d "$tizen_sdk" ]; then
+  export TIZEN_SDK="$tizen_sdk" TIZEN_SDK_ROOT="$tizen_sdk" INSTALLED_PATH="$tizen_sdk"
+  export TIZEN_TOOLS_PATH="$tizen_sdk/tools"
+  export TIZEN_CLI_PATH="$tizen_sdk/tools/ide/bin"
+  export PATH="$TIZEN_CLI_PATH:$TIZEN_TOOLS_PATH:$TIZEN_SDK:$PATH"
+fi
+unset tizen_sdk
