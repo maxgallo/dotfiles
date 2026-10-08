@@ -6,3 +6,32 @@ default_shell = "/opt/homebrew/bin/fish"
 
 [ui]
 agent_panel_sort = "spaces"
+
+[keys]
+# Caps Lock sends F13 in Ghostty via Karabiner (Home elsewhere, for tmux in iTerm).
+# Home isn't a valid herdr key name yet: https://github.com/herdrdev/herdr/discussions/4012
+prefix = "f13"
+
+# tmux-style: prefix + arrows to move between panes
+focus_pane_left = "prefix+left"
+focus_pane_right = "prefix+right"
+focus_pane_up = "prefix+up"
+focus_pane_down = "prefix+down"
+
+# tmux-style splits: | side by side, - stacked
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+
+# tmux-style resize: prefix + alt+arrows (tmux's ctrl+arrows clash with macOS Mission Control).
+# For repeated resizing use resize mode (prefix+r, then arrows, esc to exit) or drag pane borders.
+resize_pane_left = "prefix+alt+left"
+resize_pane_down = "prefix+alt+down"
+resize_pane_up = "prefix+alt+up"
+resize_pane_right = "prefix+alt+right"
+
+# Not convinced yet: jump between spaces/agents in the sidebar (like tmux sessions).
+# Alternatives: prefix+g (navigate mode), prefix+w (workspace picker)
+# previous_workspace = "prefix+shift+up"
+# next_workspace = "prefix+shift+down"
+# previous_agent = "prefix+shift+left"
+# next_agent = "prefix+shift+right"
